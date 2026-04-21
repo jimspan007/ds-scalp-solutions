@@ -29,14 +29,17 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "DS Scalp Micropigmentation — Premium SMP for Men" },
+      {
+        name: "description",
+        content:
+          "Realistic, undetectable scalp micropigmentation by a certified specialist. Restore your hairline. Book a private consultation today.",
+      },
+      { name: "author", content: "DS Scalp Micropigmentation" },
+      { property: "og:title", content: "DS Scalp Micropigmentation" },
+      { property: "og:description", content: "Premium SMP for men. Realistic, permanent results." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
