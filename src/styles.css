@@ -65,32 +65,32 @@
 
 :root {
   --radius: 0.25rem;
-  /* Core palette — dark luxe */
-  --ink: oklch(0.14 0.005 250);          /* near-black */
-  --bone: oklch(0.96 0.008 80);          /* warm off-white */
-  --gold: oklch(0.78 0.11 75);           /* champagne gold */
-  --gold-soft: oklch(0.86 0.07 78);
-  --surface: oklch(0.18 0.005 250);      /* dark grey card */
-  --surface-elevated: oklch(0.22 0.006 250);
+  /* Core palette — light luxe */
+  --ink: oklch(0.22 0.008 250);          /* deep charcoal text */
+  --bone: oklch(0.97 0.006 80);          /* warm cream background */
+  --gold: oklch(0.62 0.11 70);           /* deeper champagne gold for contrast on light */
+  --gold-soft: oklch(0.72 0.10 72);
+  --surface: oklch(0.94 0.006 80);       /* light card */
+  --surface-elevated: oklch(0.91 0.006 80);
 
-  --background: var(--ink);
-  --foreground: var(--bone);
+  --background: var(--bone);
+  --foreground: var(--ink);
   --card: var(--surface);
-  --card-foreground: var(--bone);
-  --popover: var(--surface-elevated);
-  --popover-foreground: var(--bone);
+  --card-foreground: var(--ink);
+  --popover: var(--bone);
+  --popover-foreground: var(--ink);
   --primary: var(--gold);
-  --primary-foreground: var(--ink);
+  --primary-foreground: var(--bone);
   --secondary: var(--surface-elevated);
-  --secondary-foreground: var(--bone);
-  --muted: oklch(0.24 0.005 250);
-  --muted-foreground: oklch(0.68 0.01 250);
+  --secondary-foreground: var(--ink);
+  --muted: oklch(0.93 0.006 80);
+  --muted-foreground: oklch(0.44 0.01 250);
   --accent: var(--gold);
-  --accent-foreground: var(--ink);
-  --destructive: oklch(0.62 0.22 27);
+  --accent-foreground: var(--bone);
+  --destructive: oklch(0.55 0.22 27);
   --destructive-foreground: var(--bone);
-  --border: oklch(0.28 0.005 250);
-  --input: oklch(0.24 0.005 250);
+  --border: oklch(0.86 0.008 80);
+  --input: oklch(0.93 0.006 80);
   --ring: var(--gold);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
@@ -98,12 +98,12 @@
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
   --sidebar: var(--surface);
-  --sidebar-foreground: var(--bone);
+  --sidebar-foreground: var(--ink);
   --sidebar-primary: var(--gold);
-  --sidebar-primary-foreground: var(--ink);
+  --sidebar-primary-foreground: var(--bone);
   --sidebar-accent: var(--surface-elevated);
-  --sidebar-accent-foreground: var(--bone);
-  --sidebar-border: oklch(0.28 0.005 250);
+  --sidebar-accent-foreground: var(--ink);
+  --sidebar-border: oklch(0.86 0.008 80);
   --sidebar-ring: var(--gold);
 }
 
