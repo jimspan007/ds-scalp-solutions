@@ -8,7 +8,6 @@ const NAV = [
   { to: "/about", label: "Σχετικά" },
   { to: "/services", label: "Υπηρεσίες" },
   { to: "/gallery", label: "Πριν & Μετά" },
-  { to: "/pricing", label: "Τιμές" },
   { to: "/faq", label: "Συχνές Ερωτήσεις" },
   { to: "/contact", label: "Επικοινωνία" },
 ] as const;
@@ -41,7 +40,7 @@ export function SiteHeader() {
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="flex h-24 items-center justify-between">
-          <Link to="/" className="group flex items-center" onClick={() => setOpen(false)}>
+          <Link to="/" className="group flex items-center gap-3" onClick={() => setOpen(false)}>
             <img
               src={logo}
               alt="DS Scalp Micropigmentation"
@@ -49,6 +48,10 @@ export function SiteHeader() {
               width={240}
               height={160}
             />
+            <span className="hidden sm:flex flex-col leading-tight">
+              <span className="font-display text-base text-foreground">DS Scalp</span>
+              <span className="eyebrow text-[0.55rem] tracking-[0.32em]">Micropigmentation</span>
+            </span>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-9">
