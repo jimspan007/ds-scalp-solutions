@@ -10,16 +10,16 @@ import clinic from "@/assets/clinic-interior.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "DS Scalp Micropigmentation — Premium SMP for Men" },
+      { title: "DS Scalp Micropigmentation — Premium SMP για άνδρες" },
       {
         name: "description",
         content:
-          "Restore your hairline with realistic, undetectable scalp micropigmentation. Certified specialist. Book your private consultation today.",
+          "Επανάφερε τη γραμμή των μαλλιών σου με ρεαλιστικό, μη ανιχνεύσιμο scalp micropigmentation. Πιστοποιημένος ειδικός. Κλείσε την ιδιωτική συνεδρία γνωριμίας σου σήμερα.",
       },
-      { property: "og:title", content: "DS Scalp Micropigmentation — Premium SMP for Men" },
+      { property: "og:title", content: "DS Scalp Micropigmentation — Premium SMP για άνδρες" },
       {
         property: "og:description",
-        content: "Realistic, undetectable scalp micropigmentation by a certified specialist.",
+        content: "Ρεαλιστικό, μη ανιχνεύσιμο scalp micropigmentation από πιστοποιημένο ειδικό.",
       },
     ],
   }),
@@ -47,29 +47,29 @@ function Hero() {
       <div className="absolute inset-0 grain" />
       <div className="relative mx-auto max-w-7xl w-full px-6 lg:px-10 py-20 grid lg:grid-cols-12 gap-10 items-center">
         <div className="lg:col-span-7">
-          <p className="eyebrow animate-fade-up">Scalp Micropigmentation · Est. 2017</p>
+          <p className="eyebrow animate-fade-up">Scalp Micropigmentation · Από το 2017</p>
           <h1 className="mt-6 font-display text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[0.92] text-balance animate-fade-up delay-100">
-            Get back the<br />
-            <span className="italic text-gold">hairline</span> you remember.
+            Πάρε πίσω τη<br />
+            <span className="italic text-gold">γραμμή</span> που θυμάσαι.
           </h1>
           <p className="mt-8 max-w-lg text-lg text-muted-foreground leading-relaxed animate-fade-up delay-200">
-            Realistic, undetectable scalp micropigmentation crafted exclusively for men.
-            A permanent solution to thinning, receding, or full hair loss — performed by a
-            certified specialist in a private London studio.
+            Ρεαλιστικό, μη ανιχνεύσιμο scalp micropigmentation σχεδιασμένο αποκλειστικά για άνδρες.
+            Μια μόνιμη λύση για αραίωμα, υποχώρηση ή πλήρη απώλεια μαλλιών — από πιστοποιημένο
+            ειδικό σε ιδιωτικό studio.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 animate-fade-up delay-300">
             <Link
               to="/contact"
               className="group inline-flex items-center justify-center gap-3 px-7 py-4 bg-gold text-ink text-xs font-medium tracking-[0.25em] uppercase hover:bg-gold-soft transition-colors"
             >
-              Book Free Consultation
+              Δωρεάν Συνεδρία Γνωριμίας
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
               to="/gallery"
               className="inline-flex items-center justify-center gap-3 px-7 py-4 border border-border text-foreground text-xs font-medium tracking-[0.25em] uppercase hover:border-gold hover:text-gold transition-colors"
             >
-              See Transformations
+              Δες Αποτελέσματα
             </Link>
           </div>
 
@@ -89,7 +89,7 @@ function Hero() {
                 ))}
               </div>
               <p className="mt-1 text-xs text-muted-foreground">
-                <span className="text-foreground font-medium">500+ men</span> · 4.9 average rating
+                <span className="text-foreground font-medium">500+ άνδρες</span> · 4.9 μέση βαθμολογία
               </p>
             </div>
           </div>
@@ -99,7 +99,7 @@ function Hero() {
           <div className="relative aspect-[3/4] overflow-hidden">
             <img
               src={heroPortrait}
-              alt="Man with completed scalp micropigmentation result"
+              alt="Άνδρας με ολοκληρωμένο αποτέλεσμα scalp micropigmentation"
               className="w-full h-full object-cover"
               width={1080}
               height={1440}
@@ -107,8 +107,8 @@ function Hero() {
             <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent" />
           </div>
           <div className="absolute -bottom-6 -left-6 bg-background border border-border p-5 max-w-[220px] hidden md:block">
-            <p className="eyebrow text-[0.6rem]">Treatment</p>
-            <p className="mt-2 font-display text-lg leading-tight">Density restoration · 3 sessions</p>
+            <p className="eyebrow text-[0.6rem]">Θεραπεία</p>
+            <p className="mt-2 font-display text-lg leading-tight">Αποκατάσταση πυκνότητας · 3 συνεδρίες</p>
           </div>
         </div>
       </div>
@@ -118,10 +118,10 @@ function Hero() {
 
 function TrustStrip() {
   const items = [
-    "UK Certified",
-    "Fully Insured",
-    "Medical-Grade Pigments",
-    "500+ Treatments",
+    "Πιστοποιημένος",
+    "Πλήρως Ασφαλισμένος",
+    "Ιατρικής Ποιότητας Pigments",
+    "500+ Θεραπείες",
     "Featured in GQ",
   ];
   return (
@@ -141,18 +141,18 @@ function Promise() {
   const cards = [
     {
       icon: ShieldCheck,
-      title: "Undetectable",
-      body: "Pigments matched to your skin tone and natural follicle pattern. Even up close, no one can tell.",
+      title: "Μη ανιχνεύσιμο",
+      body: "Pigments προσαρμοσμένα στον τόνο του δέρματός σου και στο φυσικό μοτίβο των τριχοθυλακίων. Ακόμα και από κοντά, κανείς δεν το καταλαβαίνει.",
     },
     {
       icon: Sparkles,
-      title: "Painless protocol",
-      body: "Topical numbing and a refined hand mean most clients describe the sensation as a light tap.",
+      title: "Ανώδυνο πρωτόκολλο",
+      body: "Τοπική αναισθησία και επιμελημένη τεχνική κάνουν τους περισσότερους πελάτες να περιγράφουν την αίσθηση ως ένα ελαφρύ άγγιγμα.",
     },
     {
       icon: Award,
-      title: "Built to last",
-      body: "Permanent results with light maintenance every 3–5 years. Always in your hands.",
+      title: "Διαρκής",
+      body: "Μόνιμα αποτελέσματα με ελαφριά συντήρηση κάθε 3–5 χρόνια. Πάντα στον δικό σου έλεγχο.",
     },
   ];
   return (
@@ -160,16 +160,16 @@ function Promise() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid md:grid-cols-12 gap-12 items-end">
           <Reveal className="md:col-span-5">
-            <p className="eyebrow">Our promise</p>
+            <p className="eyebrow">Η υπόσχεσή μας</p>
             <h2 className="mt-4 font-display text-4xl md:text-5xl leading-[1.05] text-balance">
-              No gimmicks. <span className="italic text-gold">Just results</span> you'd never guess
-              were done.
+              Χωρίς κόλπα. <span className="italic text-gold">Μόνο αποτελέσματα</span> που κανείς
+              δεν θα μάντευε ότι έγιναν.
             </h2>
           </Reveal>
           <Reveal delay={120} className="md:col-span-6 md:col-start-7">
             <p className="text-muted-foreground leading-relaxed text-lg">
-              Every scalp is different. We design a hairline that fits your face, your age, and the
-              way you want to be seen — not a one-size template.
+              Κάθε κεφάλι είναι διαφορετικό. Σχεδιάζουμε μια γραμμή μαλλιών που ταιριάζει στο
+              πρόσωπό σου, στην ηλικία σου και στο πώς θέλεις να σε βλέπουν — όχι ένα τυποποιημένο μοτίβο.
             </p>
           </Reveal>
         </div>
@@ -194,23 +194,23 @@ function FeaturedResults() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
-            <p className="eyebrow">Real results</p>
+            <p className="eyebrow">Πραγματικά αποτελέσματα</p>
             <h2 className="mt-4 font-display text-4xl md:text-5xl leading-[1.05]">
-              Before & After
+              Πριν & Μετά
             </h2>
           </div>
           <Link
             to="/gallery"
             className="text-sm text-gold hover:text-gold-soft transition-colors flex items-center gap-2 group"
           >
-            View full gallery
+            Δες όλη τη γκαλερί
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>
         <div className="grid md:grid-cols-2 gap-6">
           {[
-            { src: beforeAfter1, label: "Crown · Density restoration" },
-            { src: beforeAfter3, label: "Front view · Full transformation" },
+            { src: beforeAfter1, label: "Κορυφή · Αποκατάσταση πυκνότητας" },
+            { src: beforeAfter3, label: "Μπροστινή όψη · Ολική μεταμόρφωση" },
           ].map((b) => (
             <Reveal key={b.label}>
               <figure className="group relative overflow-hidden">
@@ -236,24 +236,24 @@ function FeaturedResults() {
 
 function WhyUs() {
   const points = [
-    { n: "01", t: "A specialist, not a salon", b: "SMP is the only thing we do. No nails, no brows — total focus, total mastery." },
-    { n: "02", t: "Hand-designed hairlines", b: "We sketch your hairline live, mirroring your bone structure and the way your hair would naturally fall." },
-    { n: "03", t: "Discreet private studio", b: "Treatments take place in a private suite — no waiting rooms, no audience." },
-    { n: "04", t: "Lifetime touch-up rate", b: "All clients receive preferred pricing for future top-ups. Forever." },
+    { n: "01", t: "Ειδικός, όχι σαλόνι", b: "Το SMP είναι το μόνο που κάνουμε. Όχι νύχια, όχι φρύδια — απόλυτη εστίαση, απόλυτη μαεστρία." },
+    { n: "02", t: "Σχεδιασμένες με το χέρι γραμμές", b: "Σκιαγραφούμε τη γραμμή σου ζωντανά, ακολουθώντας τη δομή του προσώπου σου και τη φυσική πτώση των μαλλιών." },
+    { n: "03", t: "Διακριτικό ιδιωτικό studio", b: "Οι θεραπείες γίνονται σε ιδιωτικό χώρο — χωρίς αίθουσες αναμονής, χωρίς κοινό." },
+    { n: "04", t: "Προνομιακή τιμή εφ' όρου ζωής", b: "Όλοι οι πελάτες απολαμβάνουν προνομιακή τιμή σε κάθε μελλοντικό touch-up. Για πάντα." },
   ];
   return (
     <section className="py-28 md:py-36">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-12 gap-12">
         <Reveal className="lg:col-span-5">
           <div className="sticky top-32">
-            <p className="eyebrow">Why DS</p>
+            <p className="eyebrow">Γιατί DS</p>
             <h2 className="mt-4 font-display text-4xl md:text-5xl leading-[1.05] text-balance">
-              Chosen by men who refuse to settle.
+              Επιλογή ανδρών που δεν συμβιβάζονται.
             </h2>
             <div className="gold-line w-24 my-8" />
             <img
               src={clinic}
-              alt="DS Scalp Micropigmentation private studio"
+              alt="Ιδιωτικό studio DS Scalp Micropigmentation"
               loading="lazy"
               width={1920}
               height={1080}
@@ -281,18 +281,18 @@ function WhyUs() {
 
 function Process() {
   const steps = [
-    { n: "01", t: "Consultation", b: "Free, private and pressure-free. We assess your scalp, listen to your goals, and design your hairline." },
-    { n: "02", t: "Session 01", b: "Foundation pass. We lay the base layer of micro-deposits, building density gradually for a natural look." },
-    { n: "03", t: "Session 02", b: "Definition. Two weeks later, we deepen tone and refine the hairline." },
-    { n: "04", t: "Session 03", b: "Final touches. Perfect blending, edges and a polished finish that lasts for years." },
+    { n: "01", t: "Συνεδρία γνωριμίας", b: "Δωρεάν, ιδιωτική και χωρίς πίεση. Αξιολογούμε το κεφάλι σου, ακούμε τους στόχους σου και σχεδιάζουμε τη γραμμή σου." },
+    { n: "02", t: "Συνεδρία 01", b: "Πρώτο πέρασμα. Τοποθετούμε τη βασική στρώση των micro-deposits, χτίζοντας πυκνότητα σταδιακά για φυσικό αποτέλεσμα." },
+    { n: "03", t: "Συνεδρία 02", b: "Ορισμός. Δύο εβδομάδες αργότερα, βαθαίνουμε τον τόνο και τελειοποιούμε τη γραμμή." },
+    { n: "04", t: "Συνεδρία 03", b: "Τελευταίες πινελιές. Τέλεια ενσωμάτωση, άκρες και φινίρισμα που κρατά για χρόνια." },
   ];
   return (
     <section className="py-28 md:py-36 border-t border-border/60">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <Reveal>
-          <p className="eyebrow">The process</p>
+          <p className="eyebrow">Η διαδικασία</p>
           <h2 className="mt-4 font-display text-4xl md:text-5xl leading-[1.05] max-w-2xl">
-            Four sessions to a result that <span className="italic text-gold">lasts decades</span>.
+            Τέσσερις συνεδρίες για ένα αποτέλεσμα που <span className="italic text-gold">κρατά δεκαετίες</span>.
           </h2>
         </Reveal>
         <div className="mt-16 grid md:grid-cols-4 gap-8">
@@ -314,28 +314,28 @@ function Process() {
 function Testimonials() {
   const quotes = [
     {
-      q: "I waited eight years to do this. I should have come to DS sooner. Genuinely changed how I see myself in the mirror.",
-      n: "Marcus T.",
-      d: "Banker · 41",
+      q: "Περίμενα οκτώ χρόνια για να το κάνω. Έπρεπε να είχα έρθει στο DS νωρίτερα. Άλλαξε πραγματικά τον τρόπο που βλέπω τον εαυτό μου στον καθρέφτη.",
+      n: "Μάρκος Τ.",
+      d: "Τραπεζίτης · 41",
     },
     {
-      q: "Subtle, professional, no salesy nonsense. Just sat me down, drew the hairline, and delivered exactly what we agreed.",
-      n: "James W.",
-      d: "Architect · 36",
+      q: "Διακριτικός, επαγγελματίας, χωρίς πιεστικές πωλήσεις. Με κάθισε, σχεδίασε τη γραμμή και έδωσε ακριβώς αυτό που συμφωνήσαμε.",
+      n: "Γιάννης Β.",
+      d: "Αρχιτέκτονας · 36",
     },
     {
-      q: "Even my barber didn't realise. That's the standard.",
-      n: "Elliot R.",
-      d: "PT · 29",
+      q: "Ούτε ο κουρέας μου δεν το κατάλαβε. Αυτό είναι το επίπεδο.",
+      n: "Ηλίας Ρ.",
+      d: "Personal Trainer · 29",
     },
   ];
   return (
     <section className="py-28 md:py-36 bg-surface/30 border-y border-border/60">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <Reveal>
-          <p className="eyebrow text-center">Words from our clients</p>
+          <p className="eyebrow text-center">Λόγια των πελατών μας</p>
           <h2 className="mt-4 font-display text-4xl md:text-5xl text-center max-w-3xl mx-auto leading-[1.05]">
-            Real men. Real reviews.
+            Αληθινοί άνδρες. Αληθινές κριτικές.
           </h2>
         </Reveal>
         <div className="mt-16 grid md:grid-cols-3 gap-8">
@@ -369,17 +369,17 @@ function FinalCTA() {
       <div className="absolute inset-0 grain" />
       <div className="relative mx-auto max-w-4xl px-6 text-center">
         <Reveal>
-          <p className="eyebrow">Take the first step</p>
+          <p className="eyebrow">Κάνε το πρώτο βήμα</p>
         </Reveal>
         <Reveal delay={100}>
           <h2 className="mt-6 font-display text-5xl md:text-7xl leading-[0.95] text-balance">
-            A 30-minute conversation could change the next <span className="italic text-gold">30 years</span>.
+            Μια κουβέντα 30 λεπτών μπορεί να αλλάξει τα επόμενα <span className="italic text-gold">30 χρόνια</span>.
           </h2>
         </Reveal>
         <Reveal delay={200}>
           <p className="mt-8 text-muted-foreground max-w-xl mx-auto leading-relaxed">
-            Free, confidential, no obligation. We'll talk through your goals and show you what's
-            possible — no pressure to book.
+            Δωρεάν, εμπιστευτική, χωρίς δέσμευση. Θα συζητήσουμε τους στόχους σου και θα σου δείξουμε
+            τι είναι εφικτό — χωρίς πίεση για κράτηση.
           </p>
         </Reveal>
         <Reveal delay={300}>
@@ -388,16 +388,16 @@ function FinalCTA() {
               to="/contact"
               className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-ink text-xs font-medium tracking-[0.25em] uppercase hover:bg-gold-soft transition-colors"
             >
-              Book Your Consultation
+              Κλείσε τη Συνεδρία σου
               <ArrowRight className="w-4 h-4" />
             </Link>
             <a
-              href="https://wa.me/447700900123"
+              href="https://wa.me/302100000000"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-border text-foreground text-xs font-medium tracking-[0.25em] uppercase hover:border-gold hover:text-gold transition-colors"
             >
-              Message on WhatsApp
+              Στείλε μήνυμα στο WhatsApp
             </a>
           </div>
         </Reveal>
