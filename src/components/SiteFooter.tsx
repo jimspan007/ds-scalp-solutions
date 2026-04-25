@@ -8,18 +8,15 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10 py-20">
         <div className="grid gap-12 md:grid-cols-4">
           <div className="md:col-span-2">
-            <div className="flex items-center gap-3">
+            <div className="flex flex-col gap-4">
               <img
                 src={logo}
                 alt="DS Scalp Micropigmentation"
-                className="h-12 w-auto object-contain"
-                width={140}
-                height={90}
+                className="h-20 md:h-24 w-auto object-contain brightness-0 invert opacity-90"
+                width={280}
+                height={180}
               />
-              <div>
-                <p className="font-display text-lg text-bone">DS Scalp Micropigmentation</p>
-                <p className="eyebrow text-[0.55rem]">Επανακτώντας την αυτοπεποίθηση — μία τρίχα τη φορά</p>
-              </div>
+              <p className="eyebrow text-[0.55rem]">Επανακτώντας την αυτοπεποίθηση — μία τρίχα τη φορά</p>
             </div>
             <p className="mt-8 max-w-md text-sm text-bone/60 leading-relaxed">
               Premium scalp micropigmentation από πιστοποιημένο ειδικό. Ρεαλιστικά, μη ανιχνεύσιμα

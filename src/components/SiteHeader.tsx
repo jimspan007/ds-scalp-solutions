@@ -40,19 +40,15 @@ export function SiteHeader() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="flex h-20 items-center justify-between">
-          <Link to="/" className="group flex items-center gap-3" onClick={() => setOpen(false)}>
+        <div className="flex h-24 items-center justify-between">
+          <Link to="/" className="group flex items-center" onClick={() => setOpen(false)}>
             <img
               src={logo}
               alt="DS Scalp Micropigmentation"
-              className="h-10 w-auto object-contain"
-              width={120}
-              height={80}
+              className="h-16 md:h-20 w-auto object-contain"
+              width={240}
+              height={160}
             />
-            <span className="hidden sm:flex flex-col leading-tight">
-              <span className="font-display text-base text-foreground">DS Scalp</span>
-              <span className="eyebrow text-[0.55rem] tracking-[0.32em]">Micropigmentation</span>
-            </span>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-9">
@@ -89,7 +85,7 @@ export function SiteHeader() {
 
       {/* Mobile drawer */}
       <div
-        className={`lg:hidden fixed inset-x-0 top-20 bottom-0 bg-background/98 backdrop-blur-xl transition-all duration-300 ${
+        className={`lg:hidden fixed inset-x-0 top-24 bottom-0 bg-background/98 backdrop-blur-xl transition-all duration-300 ${
           open ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
