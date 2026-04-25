@@ -10,14 +10,14 @@ import ba3 from "@/assets/before-after-3.jpg";
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
-      { title: "Before & After Gallery — DS Scalp Micropigmentation" },
+      { title: "Πριν & Μετά — DS Scalp Micropigmentation" },
       {
         name: "description",
         content:
-          "Real, unedited before-and-after results from our scalp micropigmentation clients. See what's possible.",
+          "Πραγματικά, χωρίς επεξεργασία αποτελέσματα πριν και μετά από πελάτες μας scalp micropigmentation. Δες τι είναι εφικτό.",
       },
-      { property: "og:title", content: "Before & After Gallery — DS Scalp Micropigmentation" },
-      { property: "og:description", content: "Real, unedited SMP transformations." },
+      { property: "og:title", content: "Πριν & Μετά — DS Scalp Micropigmentation" },
+      { property: "og:description", content: "Πραγματικές, χωρίς επεξεργασία μεταμορφώσεις SMP." },
       { property: "og:image", content: ba3 },
     ],
   }),
@@ -25,21 +25,21 @@ export const Route = createFileRoute("/gallery")({
 });
 
 const gallery = [
-  { src: ba1, treatment: "Density · Crown", client: "M.T. · 41", note: "3 sessions over 6 weeks" },
-  { src: ba2, treatment: "Hairline · Side", client: "J.W. · 36", note: "Restored Norwood 3 to a sharp profile" },
-  { src: ba3, treatment: "Buzzcut effect · Front", client: "E.R. · 29", note: "Full transformation in 4 sessions" },
-  { src: ba1, treatment: "Density · Diffuse loss", client: "S.K. · 44", note: "Blended with existing hair" },
-  { src: ba3, treatment: "Hairline · Front view", client: "L.A. · 33", note: "Soft, age-appropriate edge" },
-  { src: ba2, treatment: "Scar camouflage", client: "P.D. · 38", note: "FUE scar concealment, 2 sessions" },
+  { src: ba1, treatment: "Πυκνότητα · Κορυφή", client: "Μ.Τ. · 41", note: "3 συνεδρίες σε 6 εβδομάδες" },
+  { src: ba2, treatment: "Γραμμή · Πλάγια", client: "Γ.Β. · 36", note: "Από Norwood 3 σε καθαρό προφίλ" },
+  { src: ba3, treatment: "Buzzcut · Μπροστά", client: "Η.Ρ. · 29", note: "Ολική μεταμόρφωση σε 4 συνεδρίες" },
+  { src: ba1, treatment: "Πυκνότητα · Διάχυτη απώλεια", client: "Σ.Κ. · 44", note: "Συνδυασμένο με τα υπάρχοντα μαλλιά" },
+  { src: ba3, treatment: "Γραμμή · Μπροστινή όψη", client: "Λ.Α. · 33", note: "Απαλή, κατάλληλη για την ηλικία άκρη" },
+  { src: ba2, treatment: "Κάλυψη ουλών", client: "Π.Δ. · 38", note: "Κάλυψη ουλής FUE, 2 συνεδρίες" },
 ];
 
 function Gallery() {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Gallery"
-        title="Real men. Real results. No filters."
-        intro="Every photo below was taken in our studio under standard lighting — no editing, no retouching. The work speaks for itself."
+        eyebrow="Πριν & Μετά"
+        title="Αληθινοί άνδρες. Πραγματικά αποτελέσματα. Χωρίς φίλτρα."
+        intro="Κάθε φωτογραφία πάρθηκε στο studio μας υπό κανονικό φωτισμό — χωρίς επεξεργασία, χωρίς ρετουσάρισμα. Η δουλειά μιλά από μόνη της."
       />
 
       <section className="py-20 md:py-28">
@@ -58,8 +58,8 @@ function Gallery() {
                       className="w-full h-auto transition-transform duration-700 group-hover:scale-[1.02]"
                     />
                     <div className="absolute top-4 left-4 flex gap-2">
-                      <span className="px-3 py-1.5 bg-ink/80 backdrop-blur eyebrow text-[0.55rem]">Before</span>
-                      <span className="px-3 py-1.5 bg-gold text-ink eyebrow text-[0.55rem]">After</span>
+                      <span className="px-3 py-1.5 bg-ink/80 backdrop-blur eyebrow text-[0.55rem] text-bone">Πριν</span>
+                      <span className="px-3 py-1.5 bg-gold text-ink eyebrow text-[0.55rem]">Μετά</span>
                     </div>
                   </div>
                   <figcaption className="pt-5 flex items-baseline justify-between gap-4">
@@ -79,15 +79,15 @@ function Gallery() {
       <section className="py-24 border-t border-border/60 bg-surface/30">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <Reveal>
-            <p className="eyebrow">Your story next</p>
+            <p className="eyebrow">Η δική σου ιστορία είναι η επόμενη</p>
             <h2 className="mt-4 font-display text-4xl md:text-5xl leading-[1.05] text-balance">
-              Imagine your <span className="italic text-gold">before & after</span>.
+              Φαντάσου το δικό σου <span className="italic text-gold">πριν & μετά</span>.
             </h2>
             <Link
               to="/contact"
               className="mt-10 inline-flex items-center gap-3 px-7 py-4 bg-gold text-ink text-xs font-medium tracking-[0.25em] uppercase hover:bg-gold-soft transition-colors"
             >
-              Book a Consultation <ArrowRight className="w-4 h-4" />
+              Κλείσε Συνεδρία <ArrowRight className="w-4 h-4" />
             </Link>
           </Reveal>
         </div>

@@ -8,16 +8,16 @@ import processImg from "@/assets/process-detail.jpg";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Scalp Micropigmentation Treatments | DS" },
+      { title: "Υπηρεσίες — Θεραπείες Scalp Micropigmentation | DS" },
       {
         name: "description",
         content:
-          "Hairline restoration, density treatments, scar camouflage and women's SMP. Discover which scalp micropigmentation service is right for you.",
+          "Αποκατάσταση γραμμής, θεραπείες πυκνότητας, κάλυψη ουλών και γυναικείο SMP. Ανακάλυψε ποια υπηρεσία scalp micropigmentation είναι ιδανική για σένα.",
       },
-      { property: "og:title", content: "Services — DS Scalp Micropigmentation" },
+      { property: "og:title", content: "Υπηρεσίες — DS Scalp Micropigmentation" },
       {
         property: "og:description",
-        content: "Hairline restoration, density, scar camouflage and more.",
+        content: "Αποκατάσταση γραμμής, πυκνότητα, κάλυψη ουλών και άλλα.",
       },
     ],
   }),
@@ -27,27 +27,27 @@ export const Route = createFileRoute("/services")({
 const services = [
   {
     n: "01",
-    title: "Hairline Restoration",
-    body: "Recreate a sharp, age-appropriate hairline. Ideal for receding temples and a Norwood 2–4 pattern.",
-    bullets: ["Custom hairline design", "Natural softness, not stencil", "3 sessions"],
+    title: "Αποκατάσταση Γραμμής",
+    body: "Δημιούργησε ξανά μια καθαρή γραμμή μαλλιών κατάλληλη για την ηλικία σου. Ιδανικό για υποχωρούντες κροτάφους και Norwood 2–4.",
+    bullets: ["Προσωποποιημένος σχεδιασμός γραμμής", "Φυσική απαλότητα, όχι stencil", "3 συνεδρίες"],
   },
   {
     n: "02",
-    title: "Density Treatment",
-    body: "Add visual fullness to thinning crowns and diffuse loss while keeping your existing hair.",
-    bullets: ["Blends with existing hair", "Eliminates 'see-through' scalp", "2–3 sessions"],
+    title: "Θεραπεία Πυκνότητας",
+    body: "Προσθέτει οπτική πληρότητα σε αραιωμένες κορυφές και διάχυτη απώλεια, χωρίς να επηρεάζει τα υπάρχοντα μαλλιά.",
+    bullets: ["Συνδυάζεται με τα υπάρχοντα μαλλιά", "Εξαλείφει το «διαφανές» κεφάλι", "2–3 συνεδρίες"],
   },
   {
     n: "03",
-    title: "Full Buzzcut Effect",
-    body: "The signature look — a perfectly clean, freshly-shaved appearance for full hair loss.",
-    bullets: ["Total transformation", "Symmetry & shadow control", "3 sessions"],
+    title: "Πλήρες Buzzcut Effect",
+    body: "Το χαρακτηριστικό look — μια απόλυτα καθαρή, φρεσκοξυρισμένη εμφάνιση για ολική απώλεια μαλλιών.",
+    bullets: ["Ολική μεταμόρφωση", "Συμμετρία & έλεγχος σκίασης", "3 συνεδρίες"],
   },
   {
     n: "04",
-    title: "Scar Camouflage",
-    body: "Disguise FUT/FUE transplant scars, accident scars and alopecia patches with precision pigmentation.",
-    bullets: ["Strip scar concealment", "Custom pigment matching", "1–2 sessions"],
+    title: "Κάλυψη Ουλών",
+    body: "Καλύπτουμε ουλές από μεταμόσχευση FUT/FUE, ατυχήματα και περιοχές αλωπεκίας με ακριβές pigmentation.",
+    bullets: ["Κάλυψη strip scar", "Προσαρμοσμένο pigment", "1–2 συνεδρίες"],
   },
 ];
 
@@ -55,9 +55,9 @@ function Services() {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Treatments"
-        title="What we do — and who it's for."
-        intro="Scalp micropigmentation is a non-surgical, semi-permanent solution that mimics natural hair follicles. Whether you're thinning at the crown or fully shaved, there's a treatment for you."
+        eyebrow="Θεραπείες"
+        title="Τι κάνουμε — και για ποιον."
+        intro="Το scalp micropigmentation είναι μια μη χειρουργική, ημι-μόνιμη λύση που μιμείται τα φυσικά τριχοθυλάκια. Είτε αραιώνεις στην κορυφή είτε είσαι εντελώς ξυρισμένος, υπάρχει μια θεραπεία για σένα."
       />
 
       <section className="py-24 md:py-32">
@@ -88,7 +88,7 @@ function Services() {
           <Reveal className="lg:col-span-5">
             <img
               src={processImg}
-              alt="Macro shot of an SMP needle on scalp"
+              alt="Macro λήψη βελόνας SMP στο κεφάλι"
               loading="lazy"
               width={1024}
               height={1024}
@@ -97,24 +97,24 @@ function Services() {
           </Reveal>
           <div className="lg:col-span-6 lg:col-start-7">
             <Reveal>
-              <p className="eyebrow">Addressing the fears</p>
+              <p className="eyebrow">Απαντάμε στους φόβους</p>
               <h2 className="mt-4 font-display text-4xl md:text-5xl leading-[1.05]">
-                Honest answers to what every man asks.
+                Ειλικρινείς απαντήσεις σε ό,τι ρωτά κάθε άνδρας.
               </h2>
             </Reveal>
             <div className="mt-10 space-y-8">
               {[
                 {
-                  q: "Will it hurt?",
-                  a: "We use medical-grade topical numbing. Most clients describe it as a mild scratch — many fall asleep mid-session.",
+                  q: "Πονάει;",
+                  a: "Χρησιμοποιούμε ιατρικής ποιότητας τοπική αναισθησία. Οι περισσότεροι το περιγράφουν ως ελαφρύ γρατζούνισμα — πολλοί αποκοιμιούνται μέσα στη συνεδρία.",
                 },
                 {
-                  q: "Will it look fake?",
-                  a: "Not when it's done right. We design hairlines that match your facial structure and use multi-tone pigments to mimic real follicles.",
+                  q: "Θα δείχνει ψεύτικο;",
+                  a: "Όχι όταν γίνεται σωστά. Σχεδιάζουμε γραμμές που ταιριάζουν στη δομή του προσώπου σου και χρησιμοποιούμε πολυτονικά pigments που μιμούνται πραγματικά τριχοθυλάκια.",
                 },
                 {
-                  q: "Is it really permanent?",
-                  a: "Pigments last 4–6 years before a light top-up. Your investment, your timeline, always reversible if needed.",
+                  q: "Είναι πραγματικά μόνιμο;",
+                  a: "Τα pigments κρατούν 4–6 χρόνια πριν χρειαστεί ελαφρύ touch-up. Η επένδυσή σου, στον δικό σου χρόνο, πάντα αναστρέψιμη αν χρειαστεί.",
                 },
               ].map((item, i) => (
                 <Reveal key={item.q} delay={i * 100}>
@@ -130,7 +130,7 @@ function Services() {
                 to="/contact"
                 className="mt-12 inline-flex items-center gap-3 px-7 py-4 bg-gold text-ink text-xs font-medium tracking-[0.25em] uppercase hover:bg-gold-soft transition-colors"
               >
-                Discuss Your Treatment <ArrowRight className="w-4 h-4" />
+                Συζήτησε τη Θεραπεία σου <ArrowRight className="w-4 h-4" />
               </Link>
             </Reveal>
           </div>
