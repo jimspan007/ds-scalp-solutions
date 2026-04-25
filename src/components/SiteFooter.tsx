@@ -31,7 +31,6 @@ export function SiteFooter() {
                 { to: "/about", label: "Σχετικά" },
                 { to: "/services", label: "Υπηρεσίες" },
                 { to: "/gallery", label: "Πριν & Μετά" },
-                { to: "/pricing", label: "Τιμές" },
                 { to: "/faq", label: "Συχνές Ερωτήσεις" },
               ].map((l) => (
                 <li key={l.to}>
