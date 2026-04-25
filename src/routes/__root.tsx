@@ -29,15 +29,15 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "DS Scalp Micropigmentation — Premium SMP for Men" },
+      { title: "DS Scalp Micropigmentation — Premium SMP για άνδρες" },
       {
         name: "description",
         content:
-          "Realistic, undetectable scalp micropigmentation by a certified specialist. Restore your hairline. Book a private consultation today.",
+          "Ρεαλιστικό, μη ανιχνεύσιμο scalp micropigmentation από πιστοποιημένο ειδικό. Επανάφερε τη γραμμή των μαλλιών σου. Κλείσε ιδιωτική συνεδρία γνωριμίας σήμερα.",
       },
       { name: "author", content: "DS Scalp Micropigmentation" },
       { property: "og:title", content: "DS Scalp Micropigmentation" },
-      { property: "og:description", content: "Premium SMP for men. Realistic, permanent results." },
+      { property: "og:description", content: "Premium SMP για άνδρες. Ρεαλιστικά, μόνιμα αποτελέσματα." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
@@ -55,7 +55,7 @@ export const Route = createRootRoute({
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="el">
       <head>
         <HeadContent />
       </head>

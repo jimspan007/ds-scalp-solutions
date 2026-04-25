@@ -8,16 +8,16 @@ import { Reveal } from "@/components/Reveal";
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "FAQ — Scalp Micropigmentation Questions Answered | DS" },
+      { title: "Συχνές Ερωτήσεις — Scalp Micropigmentation | DS" },
       {
         name: "description",
         content:
-          "Pain, durability, recovery, maintenance — every question men ask before booking SMP, answered honestly.",
+          "Πόνος, διάρκεια, ανάρρωση, συντήρηση — κάθε ερώτηση που κάνουν οι άνδρες πριν κλείσουν SMP, απαντημένη ειλικρινά.",
       },
-      { property: "og:title", content: "FAQ — DS Scalp Micropigmentation" },
+      { property: "og:title", content: "Συχνές Ερωτήσεις — DS Scalp Micropigmentation" },
       {
         property: "og:description",
-        content: "Honest answers to the most common SMP questions.",
+        content: "Ειλικρινείς απαντήσεις στις πιο συχνές ερωτήσεις για SMP.",
       },
     ],
   }),
@@ -26,53 +26,53 @@ export const Route = createFileRoute("/faq")({
 
 const sections: { title: string; items: { q: string; a: string }[] }[] = [
   {
-    title: "The treatment",
+    title: "Η θεραπεία",
     items: [
       {
-        q: "Does scalp micropigmentation hurt?",
-        a: "Discomfort is minimal. We apply a medical-grade topical anaesthetic before each session. Most clients describe it as a light scratching sensation — many even doze off mid-session.",
+        q: "Πονάει το scalp micropigmentation;",
+        a: "Η ενόχληση είναι ελάχιστη. Εφαρμόζουμε ιατρικής ποιότητας τοπική αναισθησία πριν από κάθε συνεδρία. Οι περισσότεροι το περιγράφουν ως ελαφρύ γρατζούνισμα — πολλοί αποκοιμιούνται μέσα στη συνεδρία.",
       },
       {
-        q: "How long does each session take?",
-        a: "Sessions typically run 3–5 hours depending on the size of the area and the level of detail. We never rush — quality is non-negotiable.",
+        q: "Πόσο διαρκεί κάθε συνεδρία;",
+        a: "Οι συνεδρίες διαρκούν συνήθως 3–5 ώρες ανάλογα με το μέγεθος της περιοχής και το επίπεδο λεπτομέρειας. Ποτέ δεν βιαζόμαστε — η ποιότητα δεν διαπραγματεύεται.",
       },
       {
-        q: "How many sessions will I need?",
-        a: "Most treatments require 2–4 sessions spaced 10–14 days apart. This layered approach builds depth and allows precise refinement.",
+        q: "Πόσες συνεδρίες θα χρειαστώ;",
+        a: "Οι περισσότερες θεραπείες απαιτούν 2–4 συνεδρίες με μεσοδιαστήματα 10–14 ημερών. Αυτή η σταδιακή προσέγγιση χτίζει βάθος και επιτρέπει ακριβή τελειοποίηση.",
       },
     ],
   },
   {
-    title: "Results & longevity",
+    title: "Αποτελέσματα & διάρκεια",
     items: [
       {
-        q: "Will it look natural?",
-        a: "Absolutely — when done by a specialist. We design hairlines that match your facial structure and use multi-tone pigments that replicate real follicle variation.",
+        q: "Θα δείχνει φυσικό;",
+        a: "Απολύτως — όταν γίνεται από ειδικό. Σχεδιάζουμε γραμμές που ταιριάζουν στη δομή του προσώπου και χρησιμοποιούμε πολυτονικά pigments που αναπαράγουν την πραγματική παραλλαγή των τριχοθυλακίων.",
       },
       {
-        q: "How long will my SMP last?",
-        a: "Results typically last 4–6 years before a light top-up is recommended. Sun exposure, skin type and skincare all influence longevity.",
+        q: "Πόσο θα κρατήσει το SMP μου;",
+        a: "Τα αποτελέσματα κρατούν συνήθως 4–6 χρόνια πριν συστήνεται ελαφρύ top-up. Η έκθεση στον ήλιο, ο τύπος δέρματος και η περιποίηση επηρεάζουν τη διάρκεια.",
       },
       {
-        q: "Can it be reversed?",
-        a: "Yes. While SMP is designed to be permanent, it can be lightened or removed with laser treatments if you ever change your mind.",
+        q: "Είναι αναστρέψιμο;",
+        a: "Ναι. Παρότι το SMP σχεδιάζεται ως μόνιμο, μπορεί να ξανοίξει ή να αφαιρεθεί με laser αν αλλάξεις γνώμη.",
       },
     ],
   },
   {
-    title: "Recovery & maintenance",
+    title: "Ανάρρωση & συντήρηση",
     items: [
       {
-        q: "What's the recovery like?",
-        a: "Minimal. Your scalp may be slightly red for 24–48 hours. You'll need to keep it dry for 4 days and avoid heavy sweating, sun and pools for 7 days. That's it.",
+        q: "Πώς είναι η ανάρρωση;",
+        a: "Ελάχιστη. Το κεφάλι σου μπορεί να είναι ελαφρώς κόκκινο για 24–48 ώρες. Πρέπει να μείνει στεγνό για 4 ημέρες και να αποφύγεις έντονη εφίδρωση, ήλιο και πισίνες για 7 ημέρες. Αυτό είναι όλο.",
       },
       {
-        q: "Do I need to shave my head?",
-        a: "For full coverage treatments, yes — a regular short shave every 1–3 days maintains the look. For density treatments on existing hair, no shaving required.",
+        q: "Πρέπει να ξυρίζω το κεφάλι μου;",
+        a: "Για θεραπείες πλήρους κάλυψης, ναι — ένα κοντό ξύρισμα κάθε 1–3 ημέρες διατηρεί το look. Για θεραπείες πυκνότητας πάνω σε υπάρχοντα μαλλιά, δεν χρειάζεται ξύρισμα.",
       },
       {
-        q: "What aftercare is involved?",
-        a: "We provide a complete aftercare kit and a step-by-step protocol. Long-term, daily SPF and gentle moisturising are the only requirements.",
+        q: "Τι περιλαμβάνει η μετέπειτα φροντίδα;",
+        a: "Παρέχουμε πλήρες aftercare kit και αναλυτικό πρωτόκολλο. Μακροπρόθεσμα, καθημερινό SPF και ήπια ενυδάτωση είναι οι μόνες απαιτήσεις.",
       },
     ],
   },
@@ -82,9 +82,9 @@ function Faq() {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Questions"
-        title="Everything you wanted to ask, answered."
-        intro="We've heard them all. Below are the questions men actually ask in consultations — answered honestly, without sales spin."
+        eyebrow="Ερωτήσεις"
+        title="Όλα όσα ήθελες να ρωτήσεις, απαντημένα."
+        intro="Τα έχουμε ακούσει όλα. Παρακάτω είναι οι ερωτήσεις που πραγματικά κάνουν οι άνδρες στις συνεδρίες — απαντημένες ειλικρινά, χωρίς πωλησιακή ρητορική."
       />
 
       <section className="py-20 md:py-28">
@@ -110,13 +110,13 @@ function Faq() {
         <div className="mx-auto max-w-3xl px-6 text-center">
           <Reveal>
             <h2 className="font-display text-3xl md:text-4xl text-balance">
-              Still have a question? Ask us directly.
+              Έχεις ακόμα ερώτηση; Ρώτα μας απευθείας.
             </h2>
             <Link
               to="/contact"
               className="mt-8 inline-flex items-center gap-3 px-7 py-4 bg-gold text-ink text-xs font-medium tracking-[0.25em] uppercase hover:bg-gold-soft transition-colors"
             >
-              Get in Touch <ArrowRight className="w-4 h-4" />
+              Επικοινώνησε <ArrowRight className="w-4 h-4" />
             </Link>
           </Reveal>
         </div>

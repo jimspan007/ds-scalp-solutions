@@ -1,15 +1,16 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const NAV = [
-  { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
-  { to: "/services", label: "Services" },
-  { to: "/gallery", label: "Gallery" },
-  { to: "/pricing", label: "Pricing" },
-  { to: "/faq", label: "FAQ" },
-  { to: "/contact", label: "Contact" },
+  { to: "/", label: "Αρχική" },
+  { to: "/about", label: "Σχετικά" },
+  { to: "/services", label: "Υπηρεσίες" },
+  { to: "/gallery", label: "Πριν & Μετά" },
+  { to: "/pricing", label: "Τιμές" },
+  { to: "/faq", label: "Συχνές Ερωτήσεις" },
+  { to: "/contact", label: "Επικοινωνία" },
 ] as const;
 
 export function SiteHeader() {
@@ -41,9 +42,13 @@ export function SiteHeader() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="flex h-20 items-center justify-between">
           <Link to="/" className="group flex items-center gap-3" onClick={() => setOpen(false)}>
-            <span className="flex h-9 w-9 items-center justify-center border border-gold text-gold font-display text-lg">
-              DS
-            </span>
+            <img
+              src={logo}
+              alt="DS Scalp Micropigmentation"
+              className="h-10 w-auto object-contain"
+              width={120}
+              height={80}
+            />
             <span className="hidden sm:flex flex-col leading-tight">
               <span className="font-display text-base text-foreground">DS Scalp</span>
               <span className="eyebrow text-[0.55rem] tracking-[0.32em]">Micropigmentation</span>
@@ -69,7 +74,7 @@ export function SiteHeader() {
               to="/contact"
               className="hidden md:inline-flex items-center justify-center px-5 py-2.5 text-xs font-medium tracking-[0.2em] uppercase bg-gold text-ink hover:bg-gold-soft transition-colors"
             >
-              Book Consultation
+              Κλείσε Ραντεβού
             </Link>
             <button
               onClick={() => setOpen((v) => !v)}
@@ -107,7 +112,7 @@ export function SiteHeader() {
             onClick={() => setOpen(false)}
             className="mt-8 inline-flex items-center justify-center px-6 py-4 text-xs font-medium tracking-[0.25em] uppercase bg-gold text-ink"
           >
-            Book Consultation
+            Κλείσε Ραντεβού
           </Link>
         </nav>
       </div>

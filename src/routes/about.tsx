@@ -8,14 +8,14 @@ import specialist from "@/assets/specialist.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — DS Scalp Micropigmentation" },
+      { title: "Σχετικά — DS Scalp Micropigmentation" },
       {
         name: "description",
         content:
-          "Meet the certified specialist behind DS Scalp Micropigmentation. 8+ years of experience, 500+ treatments, and a craft-led approach to SMP.",
+          "Γνώρισε τον πιστοποιημένο ειδικό πίσω από το DS Scalp Micropigmentation. 8+ χρόνια εμπειρίας, 500+ θεραπείες και προσέγγιση με γνώμονα την τέχνη.",
       },
-      { property: "og:title", content: "About — DS Scalp Micropigmentation" },
-      { property: "og:description", content: "Meet the specialist behind DS Scalp Micropigmentation." },
+      { property: "og:title", content: "Σχετικά — DS Scalp Micropigmentation" },
+      { property: "og:description", content: "Γνώρισε τον ειδικό πίσω από το DS Scalp Micropigmentation." },
       { property: "og:image", content: specialist },
     ],
   }),
@@ -23,19 +23,19 @@ export const Route = createFileRoute("/about")({
 });
 
 const credentials = [
-  { icon: GraduationCap, label: "Trained at Beauty Medical Academy, Milan" },
-  { icon: Award, label: "Certified Master SMP Practitioner" },
-  { icon: ShieldCheck, label: "Fully insured · Licensed by Westminster Council" },
-  { icon: Heart, label: "500+ men treated since 2017" },
+  { icon: GraduationCap, label: "Εκπαίδευση στην Beauty Medical Academy, Μιλάνο" },
+  { icon: Award, label: "Πιστοποιημένος Master SMP Practitioner" },
+  { icon: ShieldCheck, label: "Πλήρως ασφαλισμένος · Αδειοδοτημένος" },
+  { icon: Heart, label: "500+ άνδρες θεραπευμένοι από το 2017" },
 ];
 
 function About() {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="The specialist"
-        title="A craft built around one thing — your confidence."
-        intro="DS Scalp Micropigmentation is led by Daniel Silva, a certified SMP master with over eight years dedicated exclusively to the art of scalp pigmentation."
+        eyebrow="Ο ειδικός"
+        title="Μια τέχνη χτισμένη γύρω από ένα πράγμα — την αυτοπεποίθησή σου."
+        intro="Το DS Scalp Micropigmentation καθοδηγείται από τον Daniel Silva, πιστοποιημένο SMP master με πάνω από οκτώ χρόνια αποκλειστικά αφιερωμένα στην τέχνη του scalp pigmentation."
       />
 
       <section className="py-24 md:py-32">
@@ -44,7 +44,7 @@ function About() {
             <div className="relative aspect-[3/4] overflow-hidden">
               <img
                 src={specialist}
-                alt="Daniel Silva, founder of DS Scalp Micropigmentation"
+                alt="Daniel Silva, ιδρυτής του DS Scalp Micropigmentation"
                 loading="lazy"
                 width={1080}
                 height={1440}
@@ -54,22 +54,24 @@ function About() {
           </Reveal>
           <div className="lg:col-span-6 lg:col-start-7">
             <Reveal>
-              <p className="eyebrow">Daniel Silva · Founder</p>
+              <p className="eyebrow">Daniel Silva · Ιδρυτής</p>
               <h2 className="mt-4 font-display text-4xl md:text-5xl leading-[1.05] text-balance">
-                I started DS because I was tired of seeing bad SMP.
+                Ξεκίνησα το DS επειδή είχα κουραστεί να βλέπω κακό SMP.
               </h2>
             </Reveal>
             <Reveal delay={120}>
               <div className="mt-8 space-y-5 text-muted-foreground leading-relaxed">
                 <p>
-                  After a decade in the industry — first in tattoo realism, then specialising
-                  exclusively in scalp micropigmentation — I opened DS as the antidote to assembly-line
-                  clinics. Here, every consultation is mine. Every needle is mine. Every result is on me.
+                  Μετά από μια δεκαετία στον χώρο — πρώτα στο realism tattoo, μετά αποκλειστικά στο
+                  scalp micropigmentation — άνοιξα το DS ως το αντίδοτο στις κλινικές «γραμμής
+                  παραγωγής». Εδώ, κάθε συνεδρία είναι δική μου. Κάθε βελόνα είναι δική μου. Κάθε
+                  αποτέλεσμα είναι δική μου ευθύνη.
                 </p>
                 <p>
-                  I believe a great hairline should look like it was always there. That requires
-                  patience, an artist's eye, and a deep respect for what hair loss does to a man's
-                  self-image. We don't sell sessions. We restore something that was taken.
+                  Πιστεύω ότι μια καλή γραμμή μαλλιών πρέπει να δείχνει σαν να ήταν πάντα εκεί. Αυτό
+                  απαιτεί υπομονή, μάτι καλλιτέχνη και βαθύ σεβασμό για το τι κάνει η απώλεια
+                  μαλλιών στην αυτοεικόνα ενός άνδρα. Δεν πουλάμε συνεδρίες. Επαναφέρουμε κάτι που
+                  χάθηκε.
                 </p>
               </div>
             </Reveal>
@@ -90,7 +92,7 @@ function About() {
                 to="/contact"
                 className="mt-12 inline-flex items-center gap-3 px-7 py-4 bg-gold text-ink text-xs font-medium tracking-[0.25em] uppercase hover:bg-gold-soft transition-colors"
               >
-                Book a Consultation <ArrowRight className="w-4 h-4" />
+                Κλείσε Συνεδρία <ArrowRight className="w-4 h-4" />
               </Link>
             </Reveal>
           </div>
@@ -100,9 +102,9 @@ function About() {
       <section className="py-24 border-t border-border/60 bg-surface/30">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 grid md:grid-cols-3 gap-12 text-center">
           {[
-            { n: "8+", t: "Years specialising in SMP" },
-            { n: "500+", t: "Treatments delivered" },
-            { n: "4.9", t: "Average client rating" },
+            { n: "8+", t: "Χρόνια εξειδίκευσης στο SMP" },
+            { n: "500+", t: "Θεραπείες" },
+            { n: "4.9", t: "Μέση βαθμολογία πελατών" },
           ].map((s, i) => (
             <Reveal key={s.n} delay={i * 100}>
               <p className="font-display text-7xl md:text-8xl text-gold">{s.n}</p>

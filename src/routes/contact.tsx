@@ -9,24 +9,24 @@ import { Reveal } from "@/components/Reveal";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Book a Consultation — DS Scalp Micropigmentation" },
+      { title: "Κλείσε Συνεδρία — DS Scalp Micropigmentation" },
       {
         name: "description",
         content:
-          "Book a free, private SMP consultation. Reach us by form, WhatsApp or visit our London studio.",
+          "Κλείσε δωρεάν, ιδιωτική συνεδρία γνωριμίας SMP. Επικοινώνησε με φόρμα, WhatsApp ή επισκέψου το studio μας.",
       },
-      { property: "og:title", content: "Book a Consultation — DS Scalp Micropigmentation" },
-      { property: "og:description", content: "Book your private SMP consultation today." },
+      { property: "og:title", content: "Κλείσε Συνεδρία — DS Scalp Micropigmentation" },
+      { property: "og:description", content: "Κλείσε σήμερα την ιδιωτική σου συνεδρία SMP." },
     ],
   }),
   component: Contact,
 });
 
 const schema = z.object({
-  name: z.string().trim().min(2, "Please enter your name").max(80),
-  email: z.string().trim().email("Enter a valid email").max(160),
+  name: z.string().trim().min(2, "Συμπλήρωσε το όνομά σου").max(80),
+  email: z.string().trim().email("Δώσε ένα έγκυρο email").max(160),
   phone: z.string().trim().max(40).optional().or(z.literal("")),
-  message: z.string().trim().min(10, "Tell us a little about your goals").max(1200),
+  message: z.string().trim().min(10, "Πες μας λίγα λόγια για τους στόχους σου").max(1200),
 });
 
 function Contact() {
@@ -58,9 +58,9 @@ function Contact() {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Contact"
-        title="Let's talk. No pressure, no obligation."
-        intro="A 30-minute private consultation costs nothing and tells you everything you need to know. Reach out below or message us on WhatsApp for a faster reply."
+        eyebrow="Επικοινωνία"
+        title="Ας μιλήσουμε. Χωρίς πίεση, χωρίς δέσμευση."
+        intro="Μια ιδιωτική συνεδρία 30 λεπτών δεν κοστίζει τίποτα και σου λέει όσα χρειάζεσαι να ξέρεις. Στείλε μας μήνυμα παρακάτω ή στο WhatsApp για ταχύτερη απάντηση."
       />
 
       <section className="py-20 md:py-28">
@@ -70,15 +70,15 @@ function Contact() {
               {submitted ? (
                 <div className="border border-gold p-12 text-center">
                   <Check className="w-12 h-12 text-gold mx-auto" strokeWidth={1.4} />
-                  <h2 className="mt-6 font-display text-3xl">Message received</h2>
+                  <h2 className="mt-6 font-display text-3xl">Το μήνυμά σου ελήφθη</h2>
                   <p className="mt-3 text-muted-foreground">
-                    Thank you. We'll be in touch within one working day.
+                    Σ' ευχαριστούμε. Θα επικοινωνήσουμε μαζί σου εντός μιας εργάσιμης ημέρας.
                   </p>
                 </div>
               ) : (
                 <form onSubmit={onSubmit} className="space-y-6" noValidate>
                   <Field
-                    label="Name"
+                    label="Όνομα"
                     name="name"
                     required
                     error={errors.name}
@@ -94,7 +94,7 @@ function Contact() {
                       autoComplete="email"
                     />
                     <Field
-                      label="Phone"
+                      label="Τηλέφωνο"
                       name="phone"
                       type="tel"
                       error={errors.phone}
@@ -103,14 +103,14 @@ function Contact() {
                   </div>
                   <div>
                     <label className="eyebrow text-[0.6rem] block mb-3">
-                      Tell us about your goals *
+                      Πες μας για τους στόχους σου *
                     </label>
                     <textarea
                       name="message"
                       rows={6}
                       maxLength={1200}
                       className="w-full bg-surface/40 border border-border focus:border-gold focus:outline-none p-4 text-foreground transition-colors resize-none"
-                      placeholder="A few lines about what you're hoping to achieve..."
+                      placeholder="Λίγες γραμμές για το τι θέλεις να πετύχεις..."
                     />
                     {errors.message && (
                       <p className="mt-2 text-xs text-destructive">{errors.message}</p>
@@ -120,7 +120,7 @@ function Contact() {
                     type="submit"
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-ink text-xs font-medium tracking-[0.25em] uppercase hover:bg-gold-soft transition-colors"
                   >
-                    Send Message
+                    Αποστολή Μηνύματος
                   </button>
                 </form>
               )}
@@ -130,17 +130,17 @@ function Contact() {
           <Reveal delay={120} className="lg:col-span-4 lg:col-start-9">
             <div className="space-y-10">
               <a
-                href="https://wa.me/447700900123"
+                href="https://wa.me/302100000000"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block border border-border hover:border-gold p-6 transition-colors group"
               >
                 <MessageCircle className="w-6 h-6 text-gold" strokeWidth={1.4} />
                 <p className="mt-4 font-display text-xl group-hover:text-gold transition-colors">
-                  WhatsApp us
+                  Στείλε μας στο WhatsApp
                 </p>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Fastest reply · within 30 minutes during studio hours
+                  Ταχύτερη απάντηση · εντός 30 λεπτών στις ώρες λειτουργίας
                 </p>
               </a>
 
@@ -149,30 +149,30 @@ function Contact() {
                   <MapPin className="w-4 h-4 text-gold mt-1 flex-shrink-0" />
                   <div>
                     <p className="eyebrow text-[0.6rem]">Studio</p>
-                    <p className="mt-1 text-foreground">14 Marlowe Street</p>
-                    <p className="text-muted-foreground">London W1, United Kingdom</p>
+                    <p className="mt-1 text-foreground">Αθήνα</p>
+                    <p className="text-muted-foreground">Ελλάδα</p>
                   </div>
                 </div>
                 <div className="flex gap-3">
                   <Phone className="w-4 h-4 text-gold mt-1 flex-shrink-0" />
                   <div>
-                    <p className="eyebrow text-[0.6rem]">Call</p>
-                    <p className="mt-1 text-foreground">+44 7700 900 123</p>
+                    <p className="eyebrow text-[0.6rem]">Τηλέφωνο</p>
+                    <p className="mt-1 text-foreground">+30 210 000 0000</p>
                   </div>
                 </div>
                 <div className="flex gap-3">
                   <Mail className="w-4 h-4 text-gold mt-1 flex-shrink-0" />
                   <div>
                     <p className="eyebrow text-[0.6rem]">Email</p>
-                    <p className="mt-1 text-foreground">hello@dsscalp.co</p>
+                    <p className="mt-1 text-foreground">info@dsscalp.gr</p>
                   </div>
                 </div>
                 <div className="flex gap-3">
                   <Clock className="w-4 h-4 text-gold mt-1 flex-shrink-0" />
                   <div>
-                    <p className="eyebrow text-[0.6rem]">Hours</p>
-                    <p className="mt-1 text-foreground">Tue – Sat · 10am – 7pm</p>
-                    <p className="text-muted-foreground">By appointment only</p>
+                    <p className="eyebrow text-[0.6rem]">Ώρες</p>
+                    <p className="mt-1 text-foreground">Τρ – Σα · 10:00 – 19:00</p>
+                    <p className="text-muted-foreground">Μόνο με ραντεβού</p>
                   </div>
                 </div>
               </div>
@@ -184,11 +184,11 @@ function Contact() {
       <section className="border-t border-border/60">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 py-16">
           <Reveal>
-            <p className="eyebrow mb-6">Find us</p>
+            <p className="eyebrow mb-6">Βρες μας</p>
             <div className="aspect-[16/7] overflow-hidden border border-border">
               <iframe
-                title="DS Scalp Micropigmentation studio location"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=-0.1437%2C51.5125%2C-0.1337%2C51.5175&layer=mapnik&marker=51.515%2C-0.1387"
+                title="Τοποθεσία studio DS Scalp Micropigmentation"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=23.7200%2C37.9700%2C23.7500%2C37.9900&layer=mapnik&marker=37.9800%2C23.7350"
                 className="w-full h-full grayscale contrast-[1.1] brightness-90"
                 loading="lazy"
               />
