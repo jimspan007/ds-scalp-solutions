@@ -94,21 +94,6 @@ function About() {
           </div>
         </div>
       </section>
-
-      <section className="py-24 border-t border-border/60 bg-surface/30">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 grid md:grid-cols-3 gap-12 text-center">
-          {[
-            { n: "8+", t: "Χρόνια εξειδίκευσης στο SMP" },
-            { n: "500+", t: "Θεραπείες" },
-            { n: "4.9", t: "Μέση βαθμολογία πελατών" },
-          ].map((s, i) => (
-            <Reveal key={s.n} delay={i * 100}>
-              <p className="font-display text-7xl md:text-8xl text-gold">{s.n}</p>
-              <p className="mt-4 eyebrow">{s.t}</p>
-            </Reveal>
-          ))}
-        </div>
-      </section>
     </SiteLayout>
   );
 }
