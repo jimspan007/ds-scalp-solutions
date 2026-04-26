@@ -3,9 +3,6 @@ import { ArrowRight, ShieldCheck, Award, Sparkles, Star } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { Reveal } from "@/components/Reveal";
 import heroPortrait from "@/assets/hero-portrait.jpg";
-import beforeAfter1 from "@/assets/before-after-1.jpg";
-import beforeAfter3 from "@/assets/before-after-3.jpg";
-import clinic from "@/assets/clinic-interior.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -30,10 +27,7 @@ function Index() {
   return (
     <SiteLayout>
       <Hero />
-      <TrustStrip />
       <Promise />
-      <FeaturedResults />
-      <WhyUs />
       <Process />
       <Testimonials />
       <FinalCTA />
@@ -71,27 +65,6 @@ function Hero() {
               Δες Αποτελέσματα
             </Link>
           </div>
-
-          <div className="mt-14 flex items-center gap-8 animate-fade-up delay-500">
-            <div className="flex -space-x-3">
-              {[1, 2, 3, 4].map((i) => (
-                <div
-                  key={i}
-                  className="w-10 h-10 rounded-full border-2 border-background bg-gradient-to-br from-surface-elevated to-surface"
-                />
-              ))}
-            </div>
-            <div>
-              <div className="flex gap-0.5">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className="w-3.5 h-3.5 fill-gold text-gold" />
-                ))}
-              </div>
-              <p className="mt-1 text-xs text-muted-foreground">
-                <span className="text-foreground font-medium">500+ άνδρες</span> · 4.9 μέση βαθμολογία
-              </p>
-            </div>
-          </div>
         </div>
 
         <div className="lg:col-span-5 relative animate-fade-in delay-300">
@@ -105,32 +78,7 @@ function Hero() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent" />
           </div>
-          <div className="absolute -bottom-6 -left-6 bg-background border border-border p-5 max-w-[220px] hidden md:block">
-            <p className="eyebrow text-[0.6rem]">Θεραπεία</p>
-            <p className="mt-2 font-display text-lg leading-tight">Αποκατάσταση πυκνότητας · 3 συνεδρίες</p>
-          </div>
         </div>
-      </div>
-    </section>
-  );
-}
-
-function TrustStrip() {
-  const items = [
-    "Πιστοποιημένος",
-    "Πλήρως Ασφαλισμένος",
-    "Ιατρικής Ποιότητας Pigments",
-    "500+ Θεραπείες",
-    "Featured in GQ",
-  ];
-  return (
-    <section className="border-y border-border/60 bg-surface/40">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 py-6 flex flex-wrap items-center justify-center gap-x-12 gap-y-3">
-        {items.map((t) => (
-          <span key={t} className="eyebrow text-[0.65rem] text-muted-foreground">
-            {t}
-          </span>
-        ))}
       </div>
     </section>
   );
@@ -179,97 +127,6 @@ function Promise() {
               <c.icon className="w-7 h-7 text-gold" strokeWidth={1.4} />
               <h3 className="mt-8 font-display text-2xl">{c.title}</h3>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{c.body}</p>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function FeaturedResults() {
-  return (
-    <section className="py-28 md:py-36 border-t border-border/60 bg-surface/30">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-          <div>
-            <p className="eyebrow">Πραγματικά αποτελέσματα</p>
-            <h2 className="mt-4 font-display text-4xl md:text-5xl leading-[1.05]">
-              Πριν & Μετά
-            </h2>
-          </div>
-          <Link
-            to="/gallery"
-            className="text-sm text-gold hover:text-gold-soft transition-colors flex items-center gap-2 group"
-          >
-            Δες όλη τη γκαλερί
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </Link>
-        </div>
-        <div className="grid md:grid-cols-2 gap-6">
-          {[
-            { src: beforeAfter1, label: "Κορυφή · Αποκατάσταση πυκνότητας" },
-            { src: beforeAfter3, label: "Μπροστινή όψη · Ολική μεταμόρφωση" },
-          ].map((b) => (
-            <Reveal key={b.label}>
-              <figure className="group relative overflow-hidden">
-                <img
-                  src={b.src}
-                  alt={b.label}
-                  loading="lazy"
-                  width={1920}
-                  height={1080}
-                  className="w-full h-auto transition-transform duration-700 group-hover:scale-[1.02]"
-                />
-                <figcaption className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-ink/90 to-transparent">
-                  <p className="eyebrow text-[0.6rem]">{b.label}</p>
-                </figcaption>
-              </figure>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function WhyUs() {
-  const points = [
-    { n: "01", t: "Ειδικός, όχι σαλόνι", b: "Το SMP είναι το μόνο που κάνουμε. Όχι νύχια, όχι φρύδια - απόλυτη εστίαση, απόλυτη μαεστρία." },
-    { n: "02", t: "Σχεδιασμένες με το χέρι γραμμές", b: "Σκιαγραφούμε τη γραμμή σου ζωντανά, ακολουθώντας τη δομή του προσώπου σου και τη φυσική πτώση των μαλλιών." },
-    { n: "03", t: "Διακριτικό ιδιωτικό studio", b: "Οι θεραπείες γίνονται σε ιδιωτικό χώρο - χωρίς αίθουσες αναμονής, χωρίς κοινό." },
-    { n: "04", t: "Προνομιακή τιμή εφ' όρου ζωής", b: "Όλοι οι πελάτες απολαμβάνουν προνομιακή τιμή σε κάθε μελλοντικό touch-up. Για πάντα." },
-  ];
-  return (
-    <section className="py-28 md:py-36">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-12 gap-12">
-        <Reveal className="lg:col-span-5">
-          <div className="sticky top-32">
-            <p className="eyebrow">Γιατί DS</p>
-            <h2 className="mt-4 font-display text-4xl md:text-5xl leading-[1.05] text-balance">
-              Επιλογή ανδρών που δεν συμβιβάζονται.
-            </h2>
-            <div className="gold-line w-24 my-8" />
-            <img
-              src={clinic}
-              alt="Ιδιωτικό studio DS Scalp Micropigmentation"
-              loading="lazy"
-              width={1920}
-              height={1080}
-              className="w-full h-auto"
-            />
-          </div>
-        </Reveal>
-        <div className="lg:col-span-6 lg:col-start-7 space-y-px bg-border/60">
-          {points.map((p, i) => (
-            <Reveal key={p.n} delay={i * 80} className="bg-background p-8 md:p-10">
-              <div className="flex gap-6 items-start">
-                <span className="font-display text-gold text-lg">{p.n}</span>
-                <div>
-                  <h3 className="font-display text-2xl">{p.t}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{p.b}</p>
-                </div>
-              </div>
             </Reveal>
           ))}
         </div>
