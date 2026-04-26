@@ -1,11 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ShieldCheck, Award, Sparkles, Star } from "lucide-react";
+import { ArrowRight, ShieldCheck, Award, Sparkles } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { Reveal } from "@/components/Reveal";
 import heroPortrait from "@/assets/hero-portrait.jpg";
-import beforeAfter1 from "@/assets/before-after-1.jpg";
-import beforeAfter3 from "@/assets/before-after-3.jpg";
-import clinic from "@/assets/clinic-interior.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -30,10 +27,7 @@ function Index() {
   return (
     <SiteLayout>
       <Hero />
-      <TrustStrip />
       <Promise />
-      <FeaturedResults />
-      <WhyUs />
       <Process />
       <Testimonials />
       <FinalCTA />
@@ -71,27 +65,6 @@ function Hero() {
               Δες Αποτελέσματα
             </Link>
           </div>
-
-          <div className="mt-14 flex items-center gap-8 animate-fade-up delay-500">
-            <div className="flex -space-x-3">
-              {[1, 2, 3, 4].map((i) => (
-                <div
-                  key={i}
-                  className="w-10 h-10 rounded-full border-2 border-background bg-gradient-to-br from-surface-elevated to-surface"
-                />
-              ))}
-            </div>
-            <div>
-              <div className="flex gap-0.5">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className="w-3.5 h-3.5 fill-gold text-gold" />
-                ))}
-              </div>
-              <p className="mt-1 text-xs text-muted-foreground">
-                <span className="text-foreground font-medium">500+ άνδρες</span> · 4.9 μέση βαθμολογία
-              </p>
-            </div>
-          </div>
         </div>
 
         <div className="lg:col-span-5 relative animate-fade-in delay-300">
@@ -105,32 +78,7 @@ function Hero() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent" />
           </div>
-          <div className="absolute -bottom-6 -left-6 bg-background border border-border p-5 max-w-[220px] hidden md:block">
-            <p className="eyebrow text-[0.6rem]">Θεραπεία</p>
-            <p className="mt-2 font-display text-lg leading-tight">Αποκατάσταση πυκνότητας · 3 συνεδρίες</p>
-          </div>
         </div>
-      </div>
-    </section>
-  );
-}
-
-function TrustStrip() {
-  const items = [
-    "Πιστοποιημένος",
-    "Πλήρως Ασφαλισμένος",
-    "Ιατρικής Ποιότητας Pigments",
-    "500+ Θεραπείες",
-    "Featured in GQ",
-  ];
-  return (
-    <section className="border-y border-border/60 bg-surface/40">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 py-6 flex flex-wrap items-center justify-center gap-x-12 gap-y-3">
-        {items.map((t) => (
-          <span key={t} className="eyebrow text-[0.65rem] text-muted-foreground">
-            {t}
-          </span>
-        ))}
       </div>
     </section>
   );
