@@ -10,13 +10,13 @@ import clinic from "@/assets/clinic-interior.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "DS Scalp Micropigmentation — Premium SMP για άνδρες" },
+      { title: "DS Scalp Micropigmentation - Premium SMP για άνδρες" },
       {
         name: "description",
         content:
           "Επανάφερε τη γραμμή των μαλλιών σου με ρεαλιστικό, μη ανιχνεύσιμο scalp micropigmentation. Πιστοποιημένος ειδικός. Κλείσε την ιδιωτική συνεδρία γνωριμίας σου σήμερα.",
       },
-      { property: "og:title", content: "DS Scalp Micropigmentation — Premium SMP για άνδρες" },
+      { property: "og:title", content: "DS Scalp Micropigmentation - Premium SMP για άνδρες" },
       {
         property: "og:description",
         content: "Ρεαλιστικό, μη ανιχνεύσιμο scalp micropigmentation από πιστοποιημένο ειδικό.",
@@ -235,9 +235,9 @@ function FeaturedResults() {
 
 function WhyUs() {
   const points = [
-    { n: "01", t: "Ειδικός, όχι σαλόνι", b: "Το SMP είναι το μόνο που κάνουμε. Όχι νύχια, όχι φρύδια — απόλυτη εστίαση, απόλυτη μαεστρία." },
+    { n: "01", t: "Ειδικός, όχι σαλόνι", b: "Το SMP είναι το μόνο που κάνουμε. Όχι νύχια, όχι φρύδια - απόλυτη εστίαση, απόλυτη μαεστρία." },
     { n: "02", t: "Σχεδιασμένες με το χέρι γραμμές", b: "Σκιαγραφούμε τη γραμμή σου ζωντανά, ακολουθώντας τη δομή του προσώπου σου και τη φυσική πτώση των μαλλιών." },
-    { n: "03", t: "Διακριτικό ιδιωτικό studio", b: "Οι θεραπείες γίνονται σε ιδιωτικό χώρο — χωρίς αίθουσες αναμονής, χωρίς κοινό." },
+    { n: "03", t: "Διακριτικό ιδιωτικό studio", b: "Οι θεραπείες γίνονται σε ιδιωτικό χώρο - χωρίς αίθουσες αναμονής, χωρίς κοινό." },
     { n: "04", t: "Προνομιακή τιμή εφ' όρου ζωής", b: "Όλοι οι πελάτες απολαμβάνουν προνομιακή τιμή σε κάθε μελλοντικό touch-up. Για πάντα." },
   ];
   return (
@@ -378,7 +378,7 @@ function FinalCTA() {
         <Reveal delay={200}>
           <p className="mt-8 text-muted-foreground max-w-xl mx-auto leading-relaxed">
             Δωρεάν, εμπιστευτική, χωρίς δέσμευση. Θα συζητήσουμε τους στόχους σου και θα σου δείξουμε
-            τι είναι εφικτό — χωρίς πίεση για κράτηση.
+            τι είναι εφικτό - χωρίς πίεση για κράτηση.
           </p>
         </Reveal>
         <Reveal delay={300}>

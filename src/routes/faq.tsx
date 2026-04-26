@@ -8,13 +8,13 @@ import { Reveal } from "@/components/Reveal";
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "Συχνές Ερωτήσεις — Scalp Micropigmentation | DS" },
+      { title: "Συχνές Ερωτήσεις - Scalp Micropigmentation | DS" },
       {
         name: "description",
         content:
-          "Πόνος, διάρκεια, ανάρρωση, συντήρηση — κάθε ερώτηση που κάνουν οι άνδρες πριν κλείσουν SMP, απαντημένη ειλικρινά.",
+          "Πόνος, διάρκεια, ανάρρωση, συντήρηση - κάθε ερώτηση που κάνουν οι άνδρες πριν κλείσουν SMP, απαντημένη ειλικρινά.",
       },
-      { property: "og:title", content: "Συχνές Ερωτήσεις — DS Scalp Micropigmentation" },
+      { property: "og:title", content: "Συχνές Ερωτήσεις - DS Scalp Micropigmentation" },
       {
         property: "og:description",
         content: "Ειλικρινείς απαντήσεις στις πιο συχνές ερωτήσεις για SMP.",

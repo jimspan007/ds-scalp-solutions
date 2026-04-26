@@ -8,13 +8,13 @@ import specialist from "@/assets/specialist.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "Σχετικά — DS Scalp Micropigmentation" },
+      { title: "Σχετικά - DS Scalp Micropigmentation" },
       {
         name: "description",
         content:
           "Γνώρισε τον πιστοποιημένο ειδικό πίσω από το DS Scalp Micropigmentation. 8+ χρόνια εμπειρίας, 500+ θεραπείες και προσέγγιση με γνώμονα την τέχνη.",
       },
-      { property: "og:title", content: "Σχετικά — DS Scalp Micropigmentation" },
+      { property: "og:title", content: "Σχετικά - DS Scalp Micropigmentation" },
       { property: "og:description", content: "Γνώρισε τον ειδικό πίσω από το DS Scalp Micropigmentation." },
       { property: "og:image", content: specialist },
     ],
@@ -34,7 +34,7 @@ function About() {
     <SiteLayout>
       <PageHero
         eyebrow="Ο ειδικός"
-        title="Μια τέχνη χτισμένη γύρω από ένα πράγμα — την αυτοπεποίθησή σου!"
+        title="Μια τέχνη χτισμένη γύρω από ένα πράγμα - την αυτοπεποίθησή σου!"
         intro="Το DS Scalp Micropigmentation καθοδηγείται από τον Σπανούδη Δημήτρη, πιστοποιημένο SMP artist με πολυέτή εμπειρία στο χώρο του Scalp Micropigmentation."
       />
 
@@ -62,8 +62,8 @@ function About() {
             <Reveal delay={120}>
               <div className="mt-8 space-y-5 text-muted-foreground leading-relaxed">
                 <p>
-                  Μετά από μια δεκαετία στον χώρο — πρώτα στο realism tattoo, μετά αποκλειστικά στο
-                  scalp micropigmentation — άνοιξα το DS ως το αντίδοτο στις κλινικές «γραμμής
+                  Μετά από μια δεκαετία στον χώρο - πρώτα στο realism tattoo, μετά αποκλειστικά στο
+                  scalp micropigmentation - άνοιξα το DS ως το αντίδοτο στις κλινικές «γραμμής
                   παραγωγής». Εδώ, κάθε συνεδρία είναι δική μου. Κάθε βελόνα είναι δική μου. Κάθε
                   αποτέλεσμα είναι δική μου ευθύνη.
                 </p>

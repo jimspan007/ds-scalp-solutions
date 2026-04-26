@@ -9,13 +9,13 @@ import { Reveal } from "@/components/Reveal";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Κλείσε Συνεδρία — DS Scalp Micropigmentation" },
+      { title: "Κλείσε Συνεδρία - DS Scalp Micropigmentation" },
       {
         name: "description",
         content:
           "Κλείσε δωρεάν, ιδιωτική συνεδρία γνωριμίας SMP. Επικοινώνησε με φόρμα, WhatsApp ή επισκέψου το studio μας.",
       },
-      { property: "og:title", content: "Κλείσε Συνεδρία — DS Scalp Micropigmentation" },
+      { property: "og:title", content: "Κλείσε Συνεδρία - DS Scalp Micropigmentation" },
       { property: "og:description", content: "Κλείσε σήμερα την ιδιωτική σου συνεδρία SMP." },
     ],
   }),

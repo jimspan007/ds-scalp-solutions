@@ -10,13 +10,13 @@ import ba3 from "@/assets/before-after-3.jpg";
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
-      { title: "Πριν & Μετά — DS Scalp Micropigmentation" },
+      { title: "Πριν & Μετά - DS Scalp Micropigmentation" },
       {
         name: "description",
         content:
           "Πραγματικά, χωρίς επεξεργασία αποτελέσματα πριν και μετά από πελάτες μας scalp micropigmentation. Δες τι είναι εφικτό.",
       },
-      { property: "og:title", content: "Πριν & Μετά — DS Scalp Micropigmentation" },
+      { property: "og:title", content: "Πριν & Μετά - DS Scalp Micropigmentation" },
       { property: "og:description", content: "Πραγματικές, χωρίς επεξεργασία μεταμορφώσεις SMP." },
       { property: "og:image", content: ba3 },
     ],
@@ -39,7 +39,7 @@ function Gallery() {
       <PageHero
         eyebrow="Πριν & Μετά"
         title="Πραγματικά αποτελέσματα. Χωρίς φίλτρα."
-        intro="Κάθε φωτογραφία πάρθηκε στο studio μας υπό κανονικό φωτισμό — χωρίς επεξεργασία, χωρίς ρετουσάρισμα. Η δουλειά μιλά από μόνη της."
+        intro="Κάθε φωτογραφία πάρθηκε στο studio μας υπό κανονικό φωτισμό - χωρίς επεξεργασία, χωρίς ρετουσάρισμα. Η δουλειά μιλά από μόνη της."
       />
 
       <section className="py-20 md:py-28">
@@ -51,7 +51,7 @@ function Gallery() {
                   <div className="relative overflow-hidden">
                     <img
                       src={g.src}
-                      alt={`${g.treatment} — ${g.client}`}
+                      alt={`${g.treatment} - ${g.client}`}
                       loading="lazy"
                       width={1920}
                       height={1080}

@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * DS Scalp Micropigmentation — Design System
+ * DS Scalp Micropigmentation - Design System
  * Editorial, masculine, medical-grade luxury.
  * Charcoal foundation + warm champagne-gold accent.
  */
@@ -65,7 +65,7 @@
 
 :root {
   --radius: 0.25rem;
-  /* Core palette — DS logo blues
+  /* Core palette - DS logo blues
      Deep slate-blue (logo background) + powder/sky blue (logo mark). */
   --ink: oklch(0.34 0.05 260);           /* deep slate-blue (matches logo bg) */
   --bone: oklch(0.97 0.012 240);         /* very light cool blue background */
