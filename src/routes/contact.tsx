@@ -59,8 +59,8 @@ function Contact() {
     <SiteLayout>
       <PageHero
         eyebrow="Επικοινωνία"
-        title="Ας μιλήσουμε. Χωρίς πίεση, χωρίς δέσμευση."
-        intro="Μια ιδιωτική συνεδρία 30 λεπτών δεν κοστίζει τίποτα και σου λέει όσα χρειάζεσαι να ξέρεις. Στείλε μας μήνυμα παρακάτω ή στο WhatsApp για ταχύτερη απάντηση."
+        title="Κλείσε δωρεάν αξιολόγηση."
+        intro="Παρέχουμε δωρεάν, χωρίς καμία δέσμευση αξιολόγηση, είτε δια ζώσης είτε τηλεφωνικά, προσαρμοσμένη στις ανάγκες και τη διαθεσιμότητά σας."
       />
 
       <section className="py-20 md:py-28">
@@ -149,7 +149,7 @@ function Contact() {
                   <MapPin className="w-4 h-4 text-gold mt-1 flex-shrink-0" />
                   <div>
                     <p className="eyebrow text-[0.6rem]">Studio</p>
-                    <p className="mt-1 text-foreground">Αθήνα</p>
+                    <p className="mt-1 text-foreground">Θεσσαλονίκη</p>
                     <p className="text-muted-foreground">Ελλάδα</p>
                   </div>
                 </div>
@@ -157,21 +157,21 @@ function Contact() {
                   <Phone className="w-4 h-4 text-gold mt-1 flex-shrink-0" />
                   <div>
                     <p className="eyebrow text-[0.6rem]">Τηλέφωνο</p>
-                    <p className="mt-1 text-foreground">+30 210 000 0000</p>
+                    <p className="mt-1 text-foreground">+30 6943264883</p>
                   </div>
                 </div>
                 <div className="flex gap-3">
                   <Mail className="w-4 h-4 text-gold mt-1 flex-shrink-0" />
                   <div>
                     <p className="eyebrow text-[0.6rem]">Email</p>
-                    <p className="mt-1 text-foreground">info@dsscalp.gr</p>
+                    <p className="mt-1 text-foreground">info@dssmp.gr</p>
                   </div>
                 </div>
                 <div className="flex gap-3">
                   <Clock className="w-4 h-4 text-gold mt-1 flex-shrink-0" />
                   <div>
                     <p className="eyebrow text-[0.6rem]">Ώρες</p>
-                    <p className="mt-1 text-foreground">Τρ – Σα · 10:00 – 19:00</p>
+                    <p className="mt-1 text-foreground">Δε – Σα · 09:00 – 20:00</p>
                     <p className="text-muted-foreground">Μόνο με ραντεβού</p>
                   </div>
                 </div>

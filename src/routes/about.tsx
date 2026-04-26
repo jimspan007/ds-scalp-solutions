@@ -35,7 +35,7 @@ function About() {
       <PageHero
         eyebrow="Ο ειδικός"
         title="Μια τέχνη χτισμένη γύρω από ένα πράγμα — την αυτοπεποίθησή σου."
-        intro="Το DS Scalp Micropigmentation καθοδηγείται από τον Daniel Silva, πιστοποιημένο SMP master με πάνω από οκτώ χρόνια αποκλειστικά αφιερωμένα στην τέχνη του scalp pigmentation."
+        intro="Το DS Scalp Micropigmentation καθοδηγείται από τον Σπανούδη Δημήτρη, πιστοποιημένο SMP artist με πολυέτή εμπειρία στο χώρο του Scalp Micropigmentation."
       />
 
       <section className="py-24 md:py-32">
@@ -44,7 +44,7 @@ function About() {
             <div className="relative aspect-[3/4] overflow-hidden">
               <img
                 src={specialist}
-                alt="Daniel Silva, ιδρυτής του DS Scalp Micropigmentation"
+                alt="Δημήτρης Σπανούδης, ιδρυτής του DS Scalp Micropigmentation"
                 loading="lazy"
                 width={1080}
                 height={1440}
@@ -54,9 +54,9 @@ function About() {
           </Reveal>
           <div className="lg:col-span-6 lg:col-start-7">
             <Reveal>
-              <p className="eyebrow">Daniel Silva · Ιδρυτής</p>
+              <p className="eyebrow">Δημήτρης Σπανούδης · Ιδρυτής</p>
               <h2 className="mt-4 font-display text-4xl md:text-5xl leading-[1.05] text-balance">
-                Ξεκίνησα το DS επειδή είχα κουραστεί να βλέπω κακό SMP.
+                Γιατί ξεκίνησα το DS SMP.
               </h2>
             </Reveal>
             <Reveal delay={120}>
