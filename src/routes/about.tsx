@@ -34,7 +34,7 @@ function About() {
     <SiteLayout>
       <PageHero
         eyebrow="Ο ειδικός"
-        title="Μια τέχνη χτισμένη γύρω από ένα πράγμα — την αυτοπεποίθησή σου."
+        title="Μια τέχνη χτισμένη γύρω από ένα πράγμα — την αυτοπεποίθησή σου!"
         intro="Το DS Scalp Micropigmentation καθοδηγείται από τον Σπανούδη Δημήτρη, πιστοποιημένο SMP artist με πολυέτή εμπειρία στο χώρο του Scalp Micropigmentation."
       />
 
