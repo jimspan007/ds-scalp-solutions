@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ShieldCheck, Award, Sparkles } from "lucide-react";
+import { ArrowRight, ShieldCheck, Award, Sparkles, Star } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { Reveal } from "@/components/Reveal";
 import heroPortrait from "@/assets/hero-portrait.jpg";
@@ -127,97 +127,6 @@ function Promise() {
               <c.icon className="w-7 h-7 text-gold" strokeWidth={1.4} />
               <h3 className="mt-8 font-display text-2xl">{c.title}</h3>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{c.body}</p>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function FeaturedResults() {
-  return (
-    <section className="py-28 md:py-36 border-t border-border/60 bg-surface/30">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-          <div>
-            <p className="eyebrow">Πραγματικά αποτελέσματα</p>
-            <h2 className="mt-4 font-display text-4xl md:text-5xl leading-[1.05]">
-              Πριν & Μετά
-            </h2>
-          </div>
-          <Link
-            to="/gallery"
-            className="text-sm text-gold hover:text-gold-soft transition-colors flex items-center gap-2 group"
-          >
-            Δες όλη τη γκαλερί
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </Link>
-        </div>
-        <div className="grid md:grid-cols-2 gap-6">
-          {[
-            { src: beforeAfter1, label: "Κορυφή · Αποκατάσταση πυκνότητας" },
-            { src: beforeAfter3, label: "Μπροστινή όψη · Ολική μεταμόρφωση" },
-          ].map((b) => (
-            <Reveal key={b.label}>
-              <figure className="group relative overflow-hidden">
-                <img
-                  src={b.src}
-                  alt={b.label}
-                  loading="lazy"
-                  width={1920}
-                  height={1080}
-                  className="w-full h-auto transition-transform duration-700 group-hover:scale-[1.02]"
-                />
-                <figcaption className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-ink/90 to-transparent">
-                  <p className="eyebrow text-[0.6rem]">{b.label}</p>
-                </figcaption>
-              </figure>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function WhyUs() {
-  const points = [
-    { n: "01", t: "Ειδικός, όχι σαλόνι", b: "Το SMP είναι το μόνο που κάνουμε. Όχι νύχια, όχι φρύδια - απόλυτη εστίαση, απόλυτη μαεστρία." },
-    { n: "02", t: "Σχεδιασμένες με το χέρι γραμμές", b: "Σκιαγραφούμε τη γραμμή σου ζωντανά, ακολουθώντας τη δομή του προσώπου σου και τη φυσική πτώση των μαλλιών." },
-    { n: "03", t: "Διακριτικό ιδιωτικό studio", b: "Οι θεραπείες γίνονται σε ιδιωτικό χώρο - χωρίς αίθουσες αναμονής, χωρίς κοινό." },
-    { n: "04", t: "Προνομιακή τιμή εφ' όρου ζωής", b: "Όλοι οι πελάτες απολαμβάνουν προνομιακή τιμή σε κάθε μελλοντικό touch-up. Για πάντα." },
-  ];
-  return (
-    <section className="py-28 md:py-36">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-12 gap-12">
-        <Reveal className="lg:col-span-5">
-          <div className="sticky top-32">
-            <p className="eyebrow">Γιατί DS</p>
-            <h2 className="mt-4 font-display text-4xl md:text-5xl leading-[1.05] text-balance">
-              Επιλογή ανδρών που δεν συμβιβάζονται.
-            </h2>
-            <div className="gold-line w-24 my-8" />
-            <img
-              src={clinic}
-              alt="Ιδιωτικό studio DS Scalp Micropigmentation"
-              loading="lazy"
-              width={1920}
-              height={1080}
-              className="w-full h-auto"
-            />
-          </div>
-        </Reveal>
-        <div className="lg:col-span-6 lg:col-start-7 space-y-px bg-border/60">
-          {points.map((p, i) => (
-            <Reveal key={p.n} delay={i * 80} className="bg-background p-8 md:p-10">
-              <div className="flex gap-6 items-start">
-                <span className="font-display text-gold text-lg">{p.n}</span>
-                <div>
-                  <h3 className="font-display text-2xl">{p.t}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{p.b}</p>
-                </div>
-              </div>
             </Reveal>
           ))}
         </div>
