@@ -49,7 +49,7 @@ export function SiteHeader() {
               height={160}
             />
             <span className="hidden sm:flex flex-col leading-tight">
-              <span className="font-display text-base text-foreground">DS Scalp</span>
+              <span className="font-display text-base text-foreground">Scalp</span>
               <span className="eyebrow text-[0.55rem] tracking-[0.32em]">Micropigmentation</span>
             </span>
           </Link>
