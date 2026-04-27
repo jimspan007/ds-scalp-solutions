@@ -3,9 +3,12 @@ import { ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
-import ba1 from "@/assets/before-after-1.jpg";
-import ba2 from "@/assets/before-after-2.jpg";
-import ba3 from "@/assets/before-after-3.jpg";
+import ba1 from "@/assets/gallery-1.jpg";
+import ba2 from "@/assets/gallery-2.jpg";
+import ba3 from "@/assets/gallery-3.jpg";
+import ba4 from "@/assets/gallery-4.jpg";
+import ba5 from "@/assets/gallery-5.jpg";
+import ba6 from "@/assets/gallery-6.jpg";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -28,9 +31,9 @@ const gallery = [
   { src: ba1, treatment: "Πυκνότητα · Κορυφή", client: "Μ.Τ. · 41", note: "3 συνεδρίες σε 6 εβδομάδες" },
   { src: ba2, treatment: "Γραμμή · Πλάγια", client: "Γ.Β. · 36", note: "Από Norwood 3 σε καθαρό προφίλ" },
   { src: ba3, treatment: "Buzzcut · Μπροστά", client: "Η.Ρ. · 29", note: "Ολική μεταμόρφωση σε 4 συνεδρίες" },
-  { src: ba1, treatment: "Πυκνότητα · Διάχυτη απώλεια", client: "Σ.Κ. · 44", note: "Συνδυασμένο με τα υπάρχοντα μαλλιά" },
-  { src: ba3, treatment: "Γραμμή · Μπροστινή όψη", client: "Λ.Α. · 33", note: "Απαλή, κατάλληλη για την ηλικία άκρη" },
-  { src: ba2, treatment: "Κάλυψη ουλών", client: "Π.Δ. · 38", note: "Κάλυψη ουλής FUE, 2 συνεδρίες" },
+  { src: ba4, treatment: "Πυκνότητα · Διάχυτη απώλεια", client: "Σ.Κ. · 44", note: "Συνδυασμένο με τα υπάρχοντα μαλλιά" },
+  { src: ba5, treatment: "Γραμμή · Μπροστινή όψη", client: "Λ.Α. · 33", note: "Απαλή, κατάλληλη για την ηλικία άκρη" },
+  { src: ba6, treatment: "Κάλυψη ουλών", client: "Π.Δ. · 38", note: "Κάλυψη ουλής FUE, 2 συνεδρίες" },
 ];
 
 function Gallery() {
