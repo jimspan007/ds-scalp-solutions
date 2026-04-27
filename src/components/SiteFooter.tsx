@@ -19,8 +19,8 @@ export function SiteFooter() {
               <p className="eyebrow text-[0.55rem]">Επανακτώντας την αυτοπεποίθηση</p>
             </div>
             <p className="mt-8 max-w-md text-sm text-bone/60 leading-relaxed">
-              Premium scalp micropigmentation από πιστοποιημένο ειδικό. Ρεαλιστικά, μη ανιχνεύσιμα
-              αποτελέσματα, σχεδιασμένα αποκλειστικά για τον σύγχρονο άνδρα.
+              Premium scalp micropigmentation από πιστοποιημένο ειδικό. Ρεαλιστικά και φυσικά
+              αποτελέσματα, σχεδιασμένα για άνδρες και γυναίκες.
             </p>
           </div>
 
@@ -48,7 +48,7 @@ export function SiteFooter() {
               <li className="flex gap-2"><MapPin className="w-4 h-4 mt-0.5 text-gold" /> Θεσσαλονίκη, Ελλάδα</li>
               <li className="flex gap-2"><Phone className="w-4 h-4 mt-0.5 text-gold" /> +30 6943264883</li>
               <li className="flex gap-2"><Mail className="w-4 h-4 mt-0.5 text-gold" /> info@dssmp.gr</li>
-              <li className="flex gap-2"><Instagram className="w-4 h-4 mt-0.5 text-gold" /> @dsscalp</li>
+              <li className="flex gap-2"><Instagram className="w-4 h-4 mt-0.5 text-gold" /> @ds_smp.gr</li>
             </ul>
           </div>
         </div>
