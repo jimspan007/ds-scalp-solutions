@@ -3,9 +3,12 @@ import { ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
-import ba1 from "@/assets/before-after-1.jpg";
-import ba2 from "@/assets/before-after-2.jpg";
-import ba3 from "@/assets/before-after-3.jpg";
+import ba1 from "@/assets/gallery-1.jpg";
+import ba2 from "@/assets/gallery-2.jpg";
+import ba3 from "@/assets/gallery-3.jpg";
+import ba4 from "@/assets/gallery-4.jpg";
+import ba5 from "@/assets/gallery-5.jpg";
+import ba6 from "@/assets/gallery-6.jpg";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -57,10 +60,6 @@ function Gallery() {
                       height={1080}
                       className="w-full h-auto transition-transform duration-700 group-hover:scale-[1.02]"
                     />
-                    <div className="absolute top-4 left-4 flex gap-2">
-                      <span className="px-3 py-1.5 bg-ink/80 backdrop-blur eyebrow text-[0.55rem] text-bone">Πριν</span>
-                      <span className="px-3 py-1.5 bg-gold text-ink eyebrow text-[0.55rem]">Μετά</span>
-                    </div>
                   </div>
                   <figcaption className="pt-5 flex items-baseline justify-between gap-4">
                     <div>
