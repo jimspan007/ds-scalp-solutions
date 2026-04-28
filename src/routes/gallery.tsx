@@ -60,10 +60,6 @@ function Gallery() {
                       height={1080}
                       className="w-full h-auto transition-transform duration-700 group-hover:scale-[1.02]"
                     />
-                    <div className="absolute top-4 left-4 flex gap-2">
-                      <span className="px-3 py-1.5 bg-ink/80 backdrop-blur eyebrow text-[0.55rem] text-bone">Πριν</span>
-                      <span className="px-3 py-1.5 bg-gold text-ink eyebrow text-[0.55rem]">Μετά</span>
-                    </div>
                   </div>
                   <figcaption className="pt-5 flex items-baseline justify-between gap-4">
                     <div>
