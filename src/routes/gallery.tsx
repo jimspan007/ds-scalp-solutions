@@ -25,12 +25,12 @@ export const Route = createFileRoute("/gallery")({
 });
 
 const gallery = [
-  { src: ba1, treatment: "Πυκνότητα · Κορυφή", client: "Μ.Τ. · 41", note: "3 συνεδρίες σε 6 εβδομάδες" },
-  { src: ba2, treatment: "Γραμμή · Πλάγια", client: "Γ.Β. · 36", note: "Από Norwood 3 σε καθαρό προφίλ" },
-  { src: ba3, treatment: "Buzzcut · Μπροστά", client: "Η.Ρ. · 29", note: "Ολική μεταμόρφωση σε 4 συνεδρίες" },
-  { src: ba1, treatment: "Πυκνότητα · Διάχυτη απώλεια", client: "Σ.Κ. · 44", note: "Συνδυασμένο με τα υπάρχοντα μαλλιά" },
-  { src: ba3, treatment: "Γραμμή · Μπροστινή όψη", client: "Λ.Α. · 33", note: "Απαλή, κατάλληλη για την ηλικία άκρη" },
-  { src: ba2, treatment: "Κάλυψη ουλών", client: "Π.Δ. · 38", note: "Κάλυψη ουλής FUE, 2 συνεδρίες" },
+  { src: ba1, treatment: "Buzzcut effect-Πύκνωση", client: "", note: "" },
+  { src: ba2, treatment: "Πυκνότητα-Density", client: "", note: "" },
+  { src: ba3, treatment: "Πυκνότητα-Density", client: "", note: "" },
+  { src: ba1, treatment: "Πυκνότητα-Density · Διάχυτη απώλεια", client: "", note: "" },
+  { src: ba3, treatment: "Πυκνότητα-Density", client: "", note: "" },
+  { src: ba2, treatment: "Buzzcut effect", client: "", note: "" },
 ];
 
 function Gallery() {
