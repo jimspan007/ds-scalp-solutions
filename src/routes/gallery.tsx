@@ -34,8 +34,6 @@ const gallery = [
   { src: baTopRight, treatment: "Πυκνότητα-Density", client: "", note: "" },
   { src: ba3, treatment: "Πυκνότητα-Density", client: "", note: "" },
   { src: ba1, treatment: "Buzzcut effect", client: "", note: "" },
-  { src: ba3, treatment: "Πυκνότητα-Density", client: "", note: "" },
-  { src: ba2, treatment: "Πυκνότητα-Density", client: "", note: "" },
 ];
 
 function Gallery() {
