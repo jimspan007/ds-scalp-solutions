@@ -78,7 +78,7 @@ function Gallery() {
       <section className="py-24 border-t border-border/60 bg-surface/30">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <Reveal>
-            <p className="eyebrow">Η δική σου ιστορία είναι η επόμενη</p>
+            <p className="eyebrow">ΕΙΝΑΙ Η ΣΕΙΡΑ ΣΟΥ</p>
             <h2 className="mt-4 font-display text-4xl md:text-5xl leading-[1.05] text-balance">
               Φαντάσου το δικό σου <span className="italic text-gold">πριν & μετά</span>.
             </h2>

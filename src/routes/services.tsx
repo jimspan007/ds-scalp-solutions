@@ -93,7 +93,7 @@ function Services() {
             <Reveal>
               <p className="eyebrow">Απαντάμε στους φόβους</p>
               <h2 className="mt-4 font-display text-4xl md:text-5xl leading-[1.05]">
-                Ειλικρινείς απαντήσεις σε ό,τι ρωτά κάθε άνδρας.
+                Αλήθειες, απορίες και απαντήσεις για όλους.
               </h2>
             </Reveal>
             <div className="mt-10 space-y-8">

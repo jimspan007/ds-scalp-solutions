@@ -26,7 +26,7 @@ const credentials = [
   { icon: GraduationCap, label: "Εκπαίδευση στην Scalp Academy Greece " },
   { icon: Award, label: "Πιστοποιημένος Master SMP Artist" },
   { icon: ShieldCheck, label: "Πλήρως ασφαλισμένος · Αδειοδοτημένος" },
-  { icon: Heart, label: "100+ περιστατικά" },
+  
 ];
 
 function About() {
