@@ -31,9 +31,9 @@ const gallery = [
   { src: ba1, treatment: "Buzzcut effect-Πύκνωση", client: "", note: "" },
   { src: ba2, treatment: "Πυκνότητα-Density", client: "", note: "" },
   { src: ba3, treatment: "Πυκνότητα-Density", client: "", note: "" },
-  { src: ba1, treatment: "Πυκνότητα-Density · Διάχυτη απώλεια", client: "", note: "" },
+  { src: ba1, treatment: "Buzzcut effect", client: "", note: "" },
   { src: ba3, treatment: "Πυκνότητα-Density", client: "", note: "" },
-  { src: ba2, treatment: "Buzzcut effect", client: "", note: "" },
+  { src: ba2, treatment: "Πυκνότητα-Density", client: "", note: "" },
 ];
 
 function Gallery() {
