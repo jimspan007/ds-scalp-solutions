@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ShieldCheck, Award, Sparkles, Star } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { Reveal } from "@/components/Reveal";
-import heroPortrait from "@/assets/hero-portrait.jpg";
+import heroPortrait from "@/assets/hero-portrait-new.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
