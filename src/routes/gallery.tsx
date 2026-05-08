@@ -9,6 +9,7 @@ import ba3 from "@/assets/gallery-3.jpg";
 import ba4 from "@/assets/gallery-4.jpg";
 import ba5 from "@/assets/gallery-5.jpg";
 import ba6 from "@/assets/gallery-6.jpg";
+import baTopLeft from "@/assets/gallery-top-left.png";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -28,7 +29,7 @@ export const Route = createFileRoute("/gallery")({
 });
 
 const gallery = [
-  { src: ba1, treatment: "Buzzcut effect-Πύκνωση", client: "", note: "" },
+  { src: baTopLeft, treatment: "Buzzcut effect-Πύκνωση", client: "", note: "" },
   { src: ba2, treatment: "Πυκνότητα-Density", client: "", note: "" },
   { src: ba3, treatment: "Πυκνότητα-Density", client: "", note: "" },
   { src: ba1, treatment: "Buzzcut effect", client: "", note: "" },
