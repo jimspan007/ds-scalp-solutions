@@ -3,63 +3,40 @@ import { ArrowRight, Check } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
+import { useI18n } from "@/i18n/I18nProvider";
 import processImg from "@/assets/process-detail.jpg";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
       { title: "Υπηρεσίες - Θεραπείες Scalp Micropigmentation | DS" },
-      {
-        name: "description",
-        content:
-          "Αποκατάσταση γραμμής, θεραπείες πυκνότητας, κάλυψη ουλών και γυναικείο SMP. Ανακάλυψε ποια υπηρεσία scalp micropigmentation είναι ιδανική για σένα.",
-      },
+      { name: "description", content: "Αποκατάσταση γραμμής, θεραπείες πυκνότητας, κάλυψη ουλών." },
       { property: "og:title", content: "Υπηρεσίες - DS Scalp Micropigmentation" },
-      {
-        property: "og:description",
-        content: "Αποκατάσταση γραμμής, πυκνότητα, κάλυψη ουλών και άλλα.",
-      },
+      { property: "og:description", content: "Αποκατάσταση γραμμής, πυκνότητα, κάλυψη ουλών και άλλα." },
     ],
   }),
   component: Services,
 });
 
-const services = [
-  {
-    n: "01",
-    title: "Πλήρες Buzzcut Effect",
-    body: "Το χαρακτηριστικό look-μια απόλυτα καθαρή,κοντοκουρεμένη-ξυρισμένη εμφάνιση για άτομα με ολική απώλεια μαλλιών.",
-    bullets: ["Ολική μεταμόρφωση", "Ομοιόμορφη κάλυψη σε όλη την περιοχή","Φυσικό Hairline", "3 συνεδρίες"],
-  },
-  {
-    n: "02",
-    title: "Density-Πύκνωση",
-    body: "Αύξηση πυκνότητας σε αραιωμένες περιοχές της κεφαλής, χωρίς να επηρεάζει τα υπάρχοντα μαλλιά.",
-    bullets: ["Συνδυάζεται με τα υπάρχοντα μαλλιά", "Εξαλείφει την αραίωση", "2–3 συνεδρίες"],
-  },
-  {
-    n: "03",
-    title: "Κάλυψη Ουλών",
-    body: "Καλύπτουμε ουλές από μεταμόσχευση FUT/FUE, ατυχήματα και περιοχές αλωπεκίας με ακριβές pigmentation.",
-    bullets: ["Κάλυψη strip scar", "Kάλυψη ουλών απο FUE", "Ουλές από δερματικές παθήσεις","Ουλές απο ιατρικές αιτίες","2-3 συνεδρίες"],
-  },
-];
-
 function Services() {
+  const { t, tx } = useI18n();
+  const services = tx<{ title: string; body: string; bullets: string[] }[]>("services.items");
+  const faq = tx<{ q: string; a: string }[]>("services.faqSection.items");
+
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Υπηρεσίες"
-        title=""
-        intro="Το Scalp micropigmentation είναι μια εξειδικευμένη, μη επεμβατική τεχνική που δημιουργεί την όψη φυσικών θυλάκων τρίχας.Δες παρακάτω τις υπηρεσίες μας."
+        eyebrow={t("services.hero.eyebrow")}
+        title={t("services.hero.title")}
+        intro={t("services.hero.intro")}
       />
 
       <section className="py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 grid md:grid-cols-2 gap-px bg-border/60">
           {services.map((s, i) => (
-            <Reveal key={s.n} delay={i * 80} className="bg-background p-10 md:p-12 group">
+            <Reveal key={s.title} delay={i * 80} className="bg-background p-10 md:p-12 group">
               <div className="flex items-start justify-between">
-                <span className="font-display text-gold text-lg">{s.n}</span>
+                <span className="font-display text-gold text-lg">{String(i + 1).padStart(2, "0")}</span>
                 <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-gold group-hover:translate-x-1 transition-all" />
               </div>
               <h2 className="mt-6 font-display text-3xl md:text-4xl">{s.title}</h2>
@@ -82,7 +59,7 @@ function Services() {
           <Reveal className="lg:col-span-5">
             <img
               src={processImg}
-              alt="Macro λήψη βελόνας SMP στο κεφάλι"
+              alt={t("services.processImgAlt")}
               loading="lazy"
               width={1024}
               height={1024}
@@ -91,26 +68,13 @@ function Services() {
           </Reveal>
           <div className="lg:col-span-6 lg:col-start-7">
             <Reveal>
-              <p className="eyebrow">Απαντάμε στους φόβους</p>
+              <p className="eyebrow">{t("services.faqSection.eyebrow")}</p>
               <h2 className="mt-4 font-display text-4xl md:text-5xl leading-[1.05]">
-                Αλήθειες, απορίες και απαντήσεις για όλους.
+                {t("services.faqSection.title")}
               </h2>
             </Reveal>
             <div className="mt-10 space-y-8">
-              {[
-                {
-                  q: "Πονάει;",
-                  a: "Όχι η αίσθηση είναι αρκετά ήπια. Οι περισσότεροι το περιγράφουν ως ελαφρύ τσίμπημα.",
-                },
-                {
-                  q: "Θα δείχνει ψεύτικο;",
-                  a: "Όχι. Όταν η εφαρμογή γίνεται σωστά, το αποτέλεσμα είναι απόλυτα φυσικό και διακριτικό. Τηρούμε αυστηρά όλα τα πρωτόκολλα, χρησιμοποιούμε κορυφαίας ποιότητας pigments και εφαρμόζουμε με ακρίβεια την τεχνική, ώστε να εξασφαλίσουμε το καλύτερο δυνατό αποτέλεσμα.",
-                },
-                {
-                  q: "Είναι πραγματικά μόνιμο;",
-                  a: "Τα pigments κρατούν 4–6 χρόνια, ενώ με μία συνεδρία μπορούμε να επαναφέρουμε το αρχικό αποτέλεσμα όποτε χρειαστεί.",
-                },
-              ].map((item, i) => (
+              {faq.map((item, i) => (
                 <Reveal key={item.q} delay={i * 100}>
                   <div className="border-l-2 border-gold pl-6">
                     <h3 className="font-display text-xl">{item.q}</h3>
@@ -124,7 +88,7 @@ function Services() {
                 to="/contact"
                 className="mt-12 inline-flex items-center gap-3 px-7 py-4 bg-gold text-ink text-xs font-medium tracking-[0.25em] uppercase hover:bg-gold-soft transition-colors"
               >
-                Συζήτησε τη Θεραπεία σου <ArrowRight className="w-4 h-4" />
+                {t("services.faqSection.cta")} <ArrowRight className="w-4 h-4" />
               </Link>
             </Reveal>
           </div>
