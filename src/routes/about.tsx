@@ -3,7 +3,7 @@ import { ArrowRight, Award, ShieldCheck, GraduationCap, Heart } from "lucide-rea
 import { SiteLayout } from "@/components/SiteLayout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
-import specialist from "@/assets/specialist.jpg";
+import specialist from "@/assets/specialist-new.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
