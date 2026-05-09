@@ -2,19 +2,22 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
+import { useI18n } from "@/i18n/I18nProvider";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 const NAV = [
-  { to: "/", label: "Αρχική" },
-  { to: "/about", label: "Σχετικά" },
-  { to: "/services", label: "Υπηρεσίες" },
-  { to: "/gallery", label: "Πριν & Μετά" },
-  { to: "/faq", label: "Συχνές Ερωτήσεις" },
-  { to: "/contact", label: "Επικοινωνία" },
+  { to: "/", key: "nav.home" },
+  { to: "/about", key: "nav.about" },
+  { to: "/services", key: "nav.services" },
+  { to: "/gallery", key: "nav.gallery" },
+  { to: "/faq", key: "nav.faq" },
+  { to: "/contact", key: "nav.contact" },
 ] as const;
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { t } = useI18n();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -63,21 +66,22 @@ export function SiteHeader() {
                 activeProps={{ className: "text-gold" }}
                 activeOptions={{ exact: n.to === "/" }}
               >
-                {n.label}
+                {t(n.key)}
               </Link>
             ))}
           </nav>
 
           <div className="flex items-center gap-3">
+            <LanguageSwitcher className="hidden sm:inline-flex" />
             <Link
               to="/contact"
               className="hidden md:inline-flex items-center justify-center px-5 py-2.5 text-xs font-medium tracking-[0.2em] uppercase bg-gold text-ink hover:bg-gold-soft transition-colors"
             >
-              Κλείσε Ραντεβού
+              {t("nav.bookCta")}
             </Link>
             <button
               onClick={() => setOpen((v) => !v)}
-              aria-label="Menu"
+              aria-label={t("nav.menu")}
               className="lg:hidden p-2 text-foreground"
             >
               {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -103,15 +107,19 @@ export function SiteHeader() {
               activeOptions={{ exact: n.to === "/" }}
               style={{ animationDelay: `${i * 40}ms` }}
             >
-              {n.label}
+              {t(n.key)}
             </Link>
           ))}
+          <div className="mt-6 flex items-center justify-between">
+            <span className="eyebrow text-[0.6rem]">{t("nav.languageLabel")}</span>
+            <LanguageSwitcher />
+          </div>
           <Link
             to="/contact"
             onClick={() => setOpen(false)}
             className="mt-8 inline-flex items-center justify-center px-6 py-4 text-xs font-medium tracking-[0.25em] uppercase bg-gold text-ink"
           >
-            Κλείσε Ραντεβού
+            {t("nav.bookCta")}
           </Link>
         </nav>
       </div>
