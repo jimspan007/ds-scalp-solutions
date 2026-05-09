@@ -48,7 +48,7 @@ function About() {
                 loading="lazy"
                 width={1080}
                 height={1440}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
             </div>
           </Reveal>
