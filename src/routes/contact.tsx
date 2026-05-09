@@ -5,16 +5,13 @@ import { MapPin, Phone, Mail, MessageCircle, Clock, Check } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
+import { useI18n } from "@/i18n/I18nProvider";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Κλείσε Συνεδρία - DS Scalp Micropigmentation" },
-      {
-        name: "description",
-        content:
-          "Κλείσε δωρεάν, ιδιωτική συνεδρία γνωριμίας SMP. Επικοινώνησε με φόρμα, WhatsApp ή επισκέψου το studio μας.",
-      },
+      { name: "description", content: "Κλείσε δωρεάν, ιδιωτική συνεδρία γνωριμίας SMP." },
       { property: "og:title", content: "Κλείσε Συνεδρία - DS Scalp Micropigmentation" },
       { property: "og:description", content: "Κλείσε σήμερα την ιδιωτική σου συνεδρία SMP." },
     ],
@@ -22,16 +19,17 @@ export const Route = createFileRoute("/contact")({
   component: Contact,
 });
 
-const schema = z.object({
-  name: z.string().trim().min(2, "Συμπλήρωσε το όνομά σου").max(80),
-  email: z.string().trim().email("Δώσε ένα έγκυρο email").max(160),
-  phone: z.string().trim().max(40).optional().or(z.literal("")),
-  message: z.string().trim().min(10, "Πες μας λίγα λόγια για τους στόχους σου").max(1200),
-});
-
 function Contact() {
+  const { t } = useI18n();
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const schema = z.object({
+    name: z.string().trim().min(2, t("contact.form.errors.name")).max(80),
+    email: z.string().trim().email(t("contact.form.errors.email")).max(160),
+    phone: z.string().trim().max(40).optional().or(z.literal("")),
+    message: z.string().trim().min(10, t("contact.form.errors.message")).max(1200),
+  });
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -58,9 +56,9 @@ function Contact() {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Επικοινωνία"
-        title="Κλείσε δωρεάν αξιολόγηση."
-        intro="Παρέχουμε δωρεάν, χωρίς καμία δέσμευση αξιολόγηση, είτε δια ζώσης είτε τηλεφωνικά, προσαρμοσμένη στις ανάγκες και τη διαθεσιμότητά σας."
+        eyebrow={t("contact.hero.eyebrow")}
+        title={t("contact.hero.title")}
+        intro={t("contact.hero.intro")}
       />
 
       <section className="py-20 md:py-28">
@@ -70,15 +68,13 @@ function Contact() {
               {submitted ? (
                 <div className="border border-gold p-12 text-center">
                   <Check className="w-12 h-12 text-gold mx-auto" strokeWidth={1.4} />
-                  <h2 className="mt-6 font-display text-3xl">Το μήνυμά σου ελήφθη</h2>
-                  <p className="mt-3 text-muted-foreground">
-                    Σ' ευχαριστούμε. Θα επικοινωνήσουμε μαζί σου εντός μιας εργάσιμης ημέρας.
-                  </p>
+                  <h2 className="mt-6 font-display text-3xl">{t("contact.success.title")}</h2>
+                  <p className="mt-3 text-muted-foreground">{t("contact.success.body")}</p>
                 </div>
               ) : (
                 <form onSubmit={onSubmit} className="space-y-6" noValidate>
                   <Field
-                    label="Όνομα"
+                    label={t("contact.form.name")}
                     name="name"
                     required
                     error={errors.name}
@@ -86,7 +82,7 @@ function Contact() {
                   />
                   <div className="grid sm:grid-cols-2 gap-6">
                     <Field
-                      label="Email"
+                      label={t("contact.form.email")}
                       name="email"
                       type="email"
                       required
@@ -94,7 +90,7 @@ function Contact() {
                       autoComplete="email"
                     />
                     <Field
-                      label="Τηλέφωνο"
+                      label={t("contact.form.phone")}
                       name="phone"
                       type="tel"
                       error={errors.phone}
@@ -103,14 +99,14 @@ function Contact() {
                   </div>
                   <div>
                     <label className="eyebrow text-[0.6rem] block mb-3">
-                      Πες μας για τους στόχους σου *
+                      {t("contact.form.message")} *
                     </label>
                     <textarea
                       name="message"
                       rows={6}
                       maxLength={1200}
                       className="w-full bg-surface/40 border border-border focus:border-gold focus:outline-none p-4 text-foreground transition-colors resize-none"
-                      placeholder="Λίγες γραμμές για το τι θέλεις να πετύχεις..."
+                      placeholder={t("contact.form.messagePlaceholder")}
                     />
                     {errors.message && (
                       <p className="mt-2 text-xs text-destructive">{errors.message}</p>
@@ -120,7 +116,7 @@ function Contact() {
                     type="submit"
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-ink text-xs font-medium tracking-[0.25em] uppercase hover:bg-gold-soft transition-colors"
                   >
-                    Αποστολή Μηνύματος
+                    {t("contact.form.submit")}
                   </button>
                 </form>
               )}
@@ -137,10 +133,10 @@ function Contact() {
               >
                 <MessageCircle className="w-6 h-6 text-gold" strokeWidth={1.4} />
                 <p className="mt-4 font-display text-xl group-hover:text-gold transition-colors">
-                  Στείλε μας στο WhatsApp
+                  {t("contact.whatsapp.title")}
                 </p>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Ταχύτερη απάντηση · εντός 30 λεπτών στις ώρες λειτουργίας
+                  {t("contact.whatsapp.sub")}
                 </p>
               </a>
 
@@ -148,31 +144,31 @@ function Contact() {
                 <div className="flex gap-3">
                   <MapPin className="w-4 h-4 text-gold mt-1 flex-shrink-0" />
                   <div>
-                    <p className="eyebrow text-[0.6rem]">Studio</p>
-                    <p className="mt-1 text-foreground">Θεσσαλονίκη</p>
-                    <p className="text-muted-foreground">Ελλάδα</p>
+                    <p className="eyebrow text-[0.6rem]">{t("contact.info.studio")}</p>
+                    <p className="mt-1 text-foreground">{t("contact.info.studioCity")}</p>
+                    <p className="text-muted-foreground">{t("contact.info.studioCountry")}</p>
                   </div>
                 </div>
                 <div className="flex gap-3">
                   <Phone className="w-4 h-4 text-gold mt-1 flex-shrink-0" />
                   <div>
-                    <p className="eyebrow text-[0.6rem]">Τηλέφωνο</p>
+                    <p className="eyebrow text-[0.6rem]">{t("contact.info.phone")}</p>
                     <p className="mt-1 text-foreground">+30 6943264883</p>
                   </div>
                 </div>
                 <div className="flex gap-3">
                   <Mail className="w-4 h-4 text-gold mt-1 flex-shrink-0" />
                   <div>
-                    <p className="eyebrow text-[0.6rem]">Email</p>
+                    <p className="eyebrow text-[0.6rem]">{t("contact.info.email")}</p>
                     <p className="mt-1 text-foreground">info@dssmp.gr</p>
                   </div>
                 </div>
                 <div className="flex gap-3">
                   <Clock className="w-4 h-4 text-gold mt-1 flex-shrink-0" />
                   <div>
-                    <p className="eyebrow text-[0.6rem]">Ώρες</p>
-                    <p className="mt-1 text-foreground">Δε – Σα · 09:00 – 20:00</p>
-                    <p className="text-muted-foreground">Μόνο με ραντεβού</p>
+                    <p className="eyebrow text-[0.6rem]">{t("contact.info.hours")}</p>
+                    <p className="mt-1 text-foreground">{t("contact.info.hoursValue")}</p>
+                    <p className="text-muted-foreground">{t("contact.info.hoursNote")}</p>
                   </div>
                 </div>
               </div>
@@ -184,10 +180,10 @@ function Contact() {
       <section className="border-t border-border/60">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 py-16">
           <Reveal>
-            <p className="eyebrow mb-6">Βρες μας</p>
+            <p className="eyebrow mb-6">{t("contact.mapEyebrow")}</p>
             <div className="aspect-[16/7] overflow-hidden border border-border">
               <iframe
-                title="Τοποθεσία studio DS Scalp Micropigmentation"
+                title={t("contact.mapTitle")}
                 src="https://www.openstreetmap.org/export/embed.html?bbox=23.7200%2C37.9700%2C23.7500%2C37.9900&layer=mapnik&marker=37.9800%2C23.7350"
                 className="w-full h-full grayscale contrast-[1.1] brightness-90"
                 loading="lazy"
