@@ -92,7 +92,7 @@ export function SiteHeader() {
 
       {/* Mobile drawer */}
       <div
-        className={`lg:hidden fixed inset-x-0 top-24 bottom-0 bg-background/98 backdrop-blur-xl transition-all duration-300 ${
+        className={`lg:hidden fixed inset-x-0 top-24 bottom-0 z-40 bg-background backdrop-blur-xl transition-all duration-300 ${
           open ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
