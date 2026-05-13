@@ -4,96 +4,41 @@ import { useState } from "react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
+import { useI18n } from "@/i18n/I18nProvider";
 
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
       { title: "Συχνές Ερωτήσεις - Scalp Micropigmentation | DS" },
-      {
-        name: "description",
-        content:
-          "Πόνος, διάρκεια, ανάρρωση, συντήρηση - κάθε ερώτηση που κάνουν οι άνδρες πριν κλείσουν SMP, απαντημένη ειλικρινά.",
-      },
+      { name: "description", content: "Ειλικρινείς απαντήσεις στις πιο συχνές ερωτήσεις για SMP." },
       { property: "og:title", content: "Συχνές Ερωτήσεις - DS Scalp Micropigmentation" },
-      {
-        property: "og:description",
-        content: "Ειλικρινείς απαντήσεις στις πιο συχνές ερωτήσεις για SMP.",
-      },
+      { property: "og:description", content: "Ειλικρινείς απαντήσεις στις πιο συχνές ερωτήσεις." },
     ],
   }),
   component: Faq,
 });
 
-const sections: { title: string; items: { q: string; a: string }[] }[] = [
-  {
-    title: "Ερωτήσεις",
-    items: [
-      {
-        q: "Πονάει το scalp micropigmentation;",
-        a: "Όχι η αίσθηση είναι αρκετά ήπια.Οι περισσότεροι το περιγράφουν ως ελαφρύ τσίμπημα.",
-      },
-      {
-        q: "Πόσο διαρκεί κάθε συνεδρία;",
-        a: "Οι συνεδρίες διαρκούν συνήθως 2-4 ώρες, εξαρτάται από τον τύπο δέρματος και από την έκταση της περιοχής που πρέπει να καλυφθεί.",
-      },
-      {
-        q: "Πόσες συνεδρίες θα χρειαστώ;",
-        a: "2-3 συνεδρίες, ανάλογα με το κάθε περιστατικό.",
-      },
-    ],
-  },
-  {
-    title: "",
-    items: [
-      {
-        q: "Είναι μόνο για άντρες;",
-        a: "Όχι το smp εφαρμόζεται πολύ συχνά και στις γυναίκες, οι οποίες έχουν αραίωση λόγω γυναικείας αλωπεκίας, είτε λόγω στρες ή ορμονών. ",
-      },
-      {
-        q: "Πόσο διαρκεί το SMP;",
-        a: "Το SMP διαρκεί 5-6 χρόνια, ενώ με ένα απλό refresh μπορούμε να επαναφέρουμε το αποτέλεσμα όποτε χρειαστεί.",
-      },
-      {
-        q: "Είναι ίδιο με το τατουάζ ;",
-        a: "Παρότι μοιάζει εξωτερικά στη διασικασία δεν είναι τατουάζ.Είναι μια εξειδικευμένη μέθοδος στην οποία χρησιμοποιείται ειδική τεχνική και διαφορετικές χρωστικές.",
-      },
-    ],
-  },
-  {
-    title: "",
-    items: [
-      {
-        q: "Πώς είναι η ανάρρωση;",
-        a: "Ελάχιστη. Το κεφάλι σου μπορεί να είναι ελαφρώς κόκκινο για 24–48 ώρες. Πρέπει να μείνει στεγνό για 4 ημέρες και να αποφύγεις έντονη εφίδρωση, ήλιο και πισίνες για 7 ημέρες. Αυτό είναι όλο.",
-      },
-      {
-        q: "Υπάρχει περίπτωση να αλλάξει το χρώμα;",
-        a: "Όταν χρησιμοποιούνται οι σωστές χρωστικές και εφαρμόζεται σωστά η τεχνική,το αποτέλεσμα παραμένει σε φυσικούς τόνους και δεν αλλάζει το χρώμα.",
-      },
-      {
-        q: "Μπορεί να συνδυαστεί με μεταμόσχευση;",
-        a: "Φυσικά και μπορεί,ειδικά όταν υπάρχει ακόμα έλλειψη πυκνότητας μετά τη μεταμόσχευση,αλλά και για να καλυφθούν πιθανές ουλές που μπορούν να προκύψουν στη δότρια περιοχή.",
-      },
-    ],
-  },
-];
-
 function Faq() {
+  const { t, tx } = useI18n();
+  const sections = tx<{ title: string; items: { q: string; a: string }[] }[]>("faq.sections");
+
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Ερωτήσεις"
-        title="Απαντάμε σε όλες σου τις ερωτήσεις."
-        intro="Τα έχουμε ακούσει όλα. Παρακάτω είναι απαντημένες οι πιο συχνές ερωτήσεις και απορίες των πελατών."
+        eyebrow={t("faq.hero.eyebrow")}
+        title={t("faq.hero.title")}
+        intro={t("faq.hero.intro")}
       />
 
       <section className="py-20 md:py-28">
         <div className="mx-auto max-w-4xl px-6 lg:px-10 space-y-20">
-          {sections.map((s) => (
-            <div key={s.title}>
-              <Reveal>
-                <p className="eyebrow">{s.title}</p>
-              </Reveal>
+          {sections.map((s, idx) => (
+            <div key={idx}>
+              {s.title && (
+                <Reveal>
+                  <p className="eyebrow">{s.title}</p>
+                </Reveal>
+              )}
               <div className="mt-8 border-t border-border">
                 {s.items.map((item, i) => (
                   <Reveal key={item.q} delay={i * 60}>
@@ -110,13 +55,13 @@ function Faq() {
         <div className="mx-auto max-w-3xl px-6 text-center">
           <Reveal>
             <h2 className="font-display text-3xl md:text-4xl text-balance">
-              Έχεις ακόμα ερώτηση; Ρώτα μας απευθείας.
+              {t("faq.ctaTitle")}
             </h2>
             <Link
               to="/contact"
               className="mt-8 inline-flex items-center gap-3 px-7 py-4 bg-gold text-ink text-xs font-medium tracking-[0.25em] uppercase hover:bg-gold-soft transition-colors"
             >
-              Επικοινώνησε <ArrowRight className="w-4 h-4" />
+              {t("faq.ctaButton")} <ArrowRight className="w-4 h-4" />
             </Link>
           </Reveal>
         </div>
