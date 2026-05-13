@@ -278,10 +278,15 @@ export const translations: Record<Locale, Dict> = {
         message: "Πες μας για τους στόχους σου",
         messagePlaceholder: "Λίγες γραμμές για το τι θέλεις να πετύχεις...",
         submit: "Αποστολή Μηνύματος",
+        submitting: "Αποστολή...",
         errors: {
           name: "Συμπλήρωσε το όνομά σου",
           email: "Δώσε ένα έγκυρο email",
           message: "Πες μας λίγα λόγια για τους στόχους σου",
+          submitFailed:
+            "Η αποστολή απέτυχε. Δοκίμασε ξανά ή στείλε μας email στο info@dssmp.gr.",
+          notConfigured:
+            "Η φόρμα δεν είναι διαθέσιμη αυτή τη στιγμή. Στείλε μας email στο info@dssmp.gr.",
         },
       },
       whatsapp: {
@@ -584,10 +589,15 @@ export const translations: Record<Locale, Dict> = {
         message: "Tell us about your goals",
         messagePlaceholder: "A few lines about what you'd like to achieve...",
         submit: "Send Message",
+        submitting: "Sending...",
         errors: {
           name: "Please enter your name",
           email: "Enter a valid email address",
           message: "Tell us a bit about your goals",
+          submitFailed:
+            "Sending failed. Please try again or email us at info@dssmp.gr.",
+          notConfigured:
+            "The form is currently unavailable. Please email us at info@dssmp.gr.",
         },
       },
       whatsapp: {
