@@ -19,10 +19,14 @@ export const Route = createFileRoute("/contact")({
   component: Contact,
 });
 
+const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
+
 function Contact() {
   const { t } = useI18n();
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const schema = z.object({
     name: z.string().trim().min(2, t("contact.form.errors.name")).max(80),
@@ -31,7 +35,7 @@ function Contact() {
     message: z.string().trim().min(10, t("contact.form.errors.message")).max(1200),
   });
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
     const data = {
@@ -40,6 +44,8 @@ function Contact() {
       phone: String(fd.get("phone") ?? ""),
       message: String(fd.get("message") ?? ""),
     };
+    const botcheck = String(fd.get("botcheck") ?? "");
+
     const result = schema.safeParse(data);
     if (!result.success) {
       const errs: Record<string, string> = {};
@@ -50,7 +56,44 @@ function Contact() {
       return;
     }
     setErrors({});
-    setSubmitted(true);
+    setSubmitError(null);
+
+    const accessKey = import.meta.env.VITE_WEB3FORMS_KEY as string | undefined;
+    if (!accessKey) {
+      setSubmitError(t("contact.form.errors.notConfigured"));
+      return;
+    }
+
+    setSubmitting(true);
+    try {
+      const response = await fetch(WEB3FORMS_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: "Νέα φόρμα επικοινωνίας — dssmp.gr",
+          from_name: "DS Scalp Solutions — Contact Form",
+          name: result.data.name,
+          email: result.data.email,
+          phone: result.data.phone ?? "",
+          message: result.data.message,
+          botcheck,
+        }),
+      });
+      const json = (await response.json()) as { success?: boolean; message?: string };
+      if (response.ok && json.success) {
+        setSubmitted(true);
+      } else {
+        setSubmitError(t("contact.form.errors.submitFailed"));
+      }
+    } catch {
+      setSubmitError(t("contact.form.errors.submitFailed"));
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -73,6 +116,22 @@ function Contact() {
                 </div>
               ) : (
                 <form onSubmit={onSubmit} className="space-y-6" noValidate>
+                  <input
+                    type="checkbox"
+                    name="botcheck"
+                    tabIndex={-1}
+                    aria-hidden="true"
+                    autoComplete="off"
+                    style={{
+                      position: "absolute",
+                      left: "-9999px",
+                      width: 1,
+                      height: 1,
+                      opacity: 0,
+                      pointerEvents: "none",
+                    }}
+                    defaultChecked={false}
+                  />
                   <Field
                     label={t("contact.form.name")}
                     name="name"
@@ -114,10 +173,16 @@ function Contact() {
                   </div>
                   <button
                     type="submit"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-ink text-xs font-medium tracking-[0.25em] uppercase hover:bg-gold-soft transition-colors"
+                    disabled={submitting}
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-ink text-xs font-medium tracking-[0.25em] uppercase hover:bg-gold-soft transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    {t("contact.form.submit")}
+                    {submitting ? t("contact.form.submitting") : t("contact.form.submit")}
                   </button>
+                  {submitError && (
+                    <p className="mt-3 text-sm text-destructive" role="alert">
+                      {submitError}
+                    </p>
+                  )}
                 </form>
               )}
             </Reveal>
