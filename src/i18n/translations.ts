@@ -140,7 +140,7 @@ export const translations: Record<Locale, Dict> = {
         eyebrow: "Ο ειδικός",
         title: "Μια τέχνη χτισμένη γύρω από ένα πράγμα - την αυτοπεποίθησή σου.",
         intro:
-          "Το DS Scalp Micropigmentation καθοδηγείται από τον Σπανούδη Δημήτρη, πιστοποιημένο SMP artist με πολυέτη εμπειρία στο χώρο του Scalp Micropigmentation.",
+          "Το DS Scalp Micropigmentation καθοδηγείται από τον Σπανούδη Δημήτρη, πιστοποιημένο SMP artist με πολυετή εμπειρία στο χώρο του Scalp Micropigmentation.",
       },
       eyebrow: "Δημήτρης Σπανούδης · Ιδρυτής",
       title: "Γιατί ξεκίνησα το DS SMP.",
