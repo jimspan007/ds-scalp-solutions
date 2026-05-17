@@ -4,7 +4,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { useI18n } from "@/i18n/I18nProvider";
-import specialist from "@/assets/specialist-new.jpg";
+import specialist from "@/assets/specialist-new-v2.png";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
