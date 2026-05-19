@@ -249,7 +249,7 @@ function Contact() {
             <div className="aspect-[16/7] overflow-hidden border border-border">
               <iframe
                 title={t("contact.mapTitle")}
-                src="https://www.openstreetmap.org/export/embed.html?bbox=23.7200%2C37.9700%2C23.7500%2C37.9900&layer=mapnik&marker=37.9800%2C23.7350"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=22.9244%2C40.6201%2C22.9644%2C40.6601&layer=mapnik&marker=40.6401%2C22.9444"
                 className="w-full h-full grayscale contrast-[1.1] brightness-90"
                 loading="lazy"
               />
