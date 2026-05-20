@@ -1,8 +1,9 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Award, ShieldCheck, GraduationCap } from "lucide-react";
+import { createFileRoute } from "@tanstack/react-router";
+import { Award, ShieldCheck, GraduationCap } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
+import { CtaButton } from "@/components/CtaButton";
 import { useI18n } from "@/i18n/I18nProvider";
 import specialist from "@/assets/specialist-new-v2.png";
 
@@ -75,12 +76,9 @@ function About() {
             </Reveal>
 
             <Reveal delay={300}>
-              <Link
-                to="/contact"
-                className="mt-12 inline-flex items-center gap-3 px-7 py-4 bg-gold text-ink text-xs font-medium tracking-[0.25em] uppercase hover:bg-gold-soft transition-colors"
-              >
-                {t("about.cta")} <ArrowRight className="w-4 h-4" />
-              </Link>
+              <CtaButton to="/contact" arrow className="mt-12">
+                {t("about.cta")}
+              </CtaButton>
             </Reveal>
           </div>
         </div>

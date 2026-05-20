@@ -195,6 +195,45 @@
   }
 
   .text-balance { text-wrap: balance; }
+
+  /* Soft ambient elevation. See DESIGN.md "The Diffuse-Only Rule":
+     wide, low-alpha, ink-tinted shadow, with a small lift on hover. */
+  .elevated {
+    box-shadow: 0 8px 28px oklch(0.34 0.05 260 / 0.06);
+    transition:
+      box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.3s ease,
+      color 0.3s ease;
+  }
+  .elevated:hover {
+    box-shadow: 0 16px 44px oklch(0.34 0.05 260 / 0.1);
+    transform: translateY(-2px);
+  }
+}
+
+/* Motion is part of the brand, but it must degrade gracefully.
+   PRODUCT.md + DESIGN.md both make reduced-motion a priority. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .animate-fade-up,
+  .animate-fade-in {
+    animation: none !important;
+  }
+  .elevated:hover {
+    transform: none !important;
+  }
 }
 
 @keyframes fade-up {

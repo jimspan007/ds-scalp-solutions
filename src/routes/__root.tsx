@@ -1,27 +1,35 @@
-import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import { Outlet, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
-import { I18nProvider } from "@/i18n/I18nProvider";
+import { I18nProvider, useI18n } from "@/i18n/I18nProvider";
+import { SiteLayout } from "@/components/SiteLayout";
+import { CtaButton } from "@/components/CtaButton";
 
 function NotFoundComponent() {
+  const { t } = useI18n();
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
-        </p>
-        <div className="mt-6">
-          <Link
-            to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Go home
-          </Link>
+    <SiteLayout>
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 grain" />
+        <div className="relative mx-auto max-w-2xl px-6 py-32 md:py-44 text-center">
+          <p className="eyebrow">{t("notFound.eyebrow")}</p>
+          <p className="mt-8 font-display text-[7rem] md:text-[10rem] leading-[0.85] text-balance">
+            404
+          </p>
+          <h1 className="mt-6 font-display text-3xl md:text-4xl text-balance">
+            {t("notFound.title")}
+          </h1>
+          <p className="mt-5 mx-auto max-w-md text-muted-foreground leading-relaxed">
+            {t("notFound.body")}
+          </p>
+          <div className="mt-10 flex justify-center">
+            <CtaButton to="/" arrow>
+              {t("notFound.cta")}
+            </CtaButton>
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </SiteLayout>
   );
 }
 

@@ -1,8 +1,8 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
+import { CtaButton } from "@/components/CtaButton";
 import { useI18n } from "@/i18n/I18nProvider";
 import ba1 from "@/assets/gallery-1.jpg";
 import ba3 from "@/assets/gallery-3.jpg";
@@ -69,12 +69,9 @@ function Gallery() {
             <h2 className="mt-4 font-display text-4xl md:text-5xl leading-[1.05] text-balance">
               {t("gallery.ctaTitle")} <span className="italic text-gold">{t("gallery.ctaTitleAccent")}</span>.
             </h2>
-            <Link
-              to="/contact"
-              className="mt-10 inline-flex items-center gap-3 px-7 py-4 bg-gold text-ink text-xs font-medium tracking-[0.25em] uppercase hover:bg-gold-soft transition-colors"
-            >
-              {t("gallery.ctaButton")} <ArrowRight className="w-4 h-4" />
-            </Link>
+            <CtaButton to="/contact" arrow className="mt-10">
+              {t("gallery.ctaButton")}
+            </CtaButton>
           </Reveal>
         </div>
       </section>

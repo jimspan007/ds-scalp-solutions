@@ -1,7 +1,8 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ShieldCheck, Award, Sparkles, Star } from "lucide-react";
+import { createFileRoute } from "@tanstack/react-router";
+import { ShieldCheck, Award, Sparkles, Star } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { Reveal } from "@/components/Reveal";
+import { CtaButton } from "@/components/CtaButton";
 import { useI18n } from "@/i18n/I18nProvider";
 import heroPortrait from "@/assets/hero-portrait-new.jpg";
 
@@ -51,19 +52,12 @@ function Hero() {
             {t("home.hero.intro")}
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 animate-fade-up delay-300">
-            <Link
-              to="/contact"
-              className="group inline-flex items-center justify-center gap-3 px-7 py-4 bg-gold text-ink text-xs font-medium tracking-[0.25em] uppercase hover:bg-gold-soft transition-colors"
-            >
+            <CtaButton to="/contact" arrow>
               {t("home.hero.ctaPrimary")}
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-            <Link
-              to="/gallery"
-              className="inline-flex items-center justify-center gap-3 px-7 py-4 border border-border text-foreground text-xs font-medium tracking-[0.25em] uppercase hover:border-gold hover:text-gold transition-colors"
-            >
+            </CtaButton>
+            <CtaButton to="/gallery" variant="outline">
               {t("home.hero.ctaSecondary")}
-            </Link>
+            </CtaButton>
           </div>
         </div>
 
@@ -157,7 +151,7 @@ function Testimonials() {
         <div className="mt-16 grid md:grid-cols-3 gap-8">
           {quotes.map((q, i) => (
             <Reveal key={q.n} delay={i * 100}>
-              <figure className="border border-border bg-background p-8 h-full flex flex-col">
+              <figure className="elevated border border-border bg-background p-8 h-full flex flex-col">
                 <div className="flex gap-0.5 mb-6">
                   {[1, 2, 3, 4, 5].map((s) => (
                     <Star key={s} className="w-3.5 h-3.5 fill-gold text-gold" />
@@ -200,21 +194,17 @@ function FinalCTA() {
         </Reveal>
         <Reveal delay={300}>
           <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-ink text-xs font-medium tracking-[0.25em] uppercase hover:bg-gold-soft transition-colors"
-            >
+            <CtaButton to="/contact" arrow>
               {t("home.finalCta.ctaPrimary")}
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-            <a
-              href="https://wa.me/302100000000"
+            </CtaButton>
+            <CtaButton
+              href="https://wa.me/306943264883"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-border text-foreground text-xs font-medium tracking-[0.25em] uppercase hover:border-gold hover:text-gold transition-colors"
+              variant="outline"
             >
               {t("home.finalCta.ctaSecondary")}
-            </a>
+            </CtaButton>
           </div>
         </Reveal>
       </div>
