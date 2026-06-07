@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { useI18n } from "@/i18n/I18nProvider";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { CtaButton } from "./CtaButton";
 
 const NAV = [
   { to: "/", key: "nav.home" },
@@ -73,12 +74,9 @@ export function SiteHeader() {
 
           <div className="flex items-center gap-3">
             <LanguageSwitcher className="hidden sm:inline-flex" />
-            <Link
-              to="/contact"
-              className="hidden md:inline-flex items-center justify-center px-5 py-2.5 text-xs font-medium tracking-[0.2em] uppercase bg-gold text-ink hover:bg-gold-soft transition-colors"
-            >
+            <CtaButton to="/contact" size="sm" className="max-md:hidden">
               {t("nav.bookCta")}
-            </Link>
+            </CtaButton>
             <button
               onClick={() => setOpen((v) => !v)}
               aria-label={t("nav.menu")}
@@ -114,13 +112,9 @@ export function SiteHeader() {
             <span className="eyebrow text-[0.6rem]">{t("nav.languageLabel")}</span>
             <LanguageSwitcher />
           </div>
-          <Link
-            to="/contact"
-            onClick={() => setOpen(false)}
-            className="mt-8 inline-flex items-center justify-center px-6 py-4 text-xs font-medium tracking-[0.25em] uppercase bg-gold text-ink"
-          >
+          <CtaButton to="/contact" onClick={() => setOpen(false)} className="mt-8">
             {t("nav.bookCta")}
-          </Link>
+          </CtaButton>
         </nav>
       </div>
     </header>

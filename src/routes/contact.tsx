@@ -5,6 +5,7 @@ import { MapPin, Phone, Mail, MessageCircle, Clock, Check } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
+import { CtaButton } from "@/components/CtaButton";
 import { useI18n } from "@/i18n/I18nProvider";
 
 export const Route = createFileRoute("/contact")({
@@ -171,13 +172,9 @@ function Contact() {
                       <p className="mt-2 text-xs text-destructive">{errors.message}</p>
                     )}
                   </div>
-                  <button
-                    type="submit"
-                    disabled={submitting}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-ink text-xs font-medium tracking-[0.25em] uppercase hover:bg-gold-soft transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
-                  >
+                  <CtaButton type="submit" disabled={submitting} className="w-full sm:w-auto">
                     {submitting ? t("contact.form.submitting") : t("contact.form.submit")}
-                  </button>
+                  </CtaButton>
                   {submitError && (
                     <p className="mt-3 text-sm text-destructive" role="alert">
                       {submitError}
@@ -191,10 +188,10 @@ function Contact() {
           <Reveal delay={120} className="lg:col-span-4 lg:col-start-9">
             <div className="space-y-10">
               <a
-                href="https://wa.me/302100000000"
+                href="https://wa.me/306943264883"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block border border-border hover:border-gold p-6 transition-colors group"
+                className="elevated block border border-border hover:border-gold p-6 group"
               >
                 <MessageCircle className="w-6 h-6 text-gold" strokeWidth={1.4} />
                 <p className="mt-4 font-display text-xl group-hover:text-gold transition-colors">

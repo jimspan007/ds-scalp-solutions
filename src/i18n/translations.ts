@@ -18,6 +18,12 @@ export const translations: Record<Locale, Dict> = {
       menu: "Μενού",
       languageLabel: "Γλώσσα",
     },
+    notFound: {
+      eyebrow: "Σφάλμα 404",
+      title: "Αυτή η σελίδα δεν υπάρχει.",
+      body: "Ο σύνδεσμος μπορεί να έχει αλλάξει ή να μετακινήθηκε. Ας σε γυρίσουμε σε σταθερό έδαφος.",
+      cta: "Επιστροφή στην Αρχική",
+    },
     meta: {
       home: {
         title: "DS Scalp Micropigmentation - Premium SMP για άνδρες",
@@ -328,6 +334,12 @@ export const translations: Record<Locale, Dict> = {
       bookCta: "Book Appointment",
       menu: "Menu",
       languageLabel: "Language",
+    },
+    notFound: {
+      eyebrow: "Error 404",
+      title: "This page doesn't exist.",
+      body: "The link may have changed or moved. Let's get you back on solid ground.",
+      cta: "Back to Home",
     },
     meta: {
       home: {

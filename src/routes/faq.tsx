@@ -1,9 +1,9 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
+import { CtaButton } from "@/components/CtaButton";
 import { useI18n } from "@/i18n/I18nProvider";
 
 export const Route = createFileRoute("/faq")({
@@ -57,12 +57,9 @@ function Faq() {
             <h2 className="font-display text-3xl md:text-4xl text-balance">
               {t("faq.ctaTitle")}
             </h2>
-            <Link
-              to="/contact"
-              className="mt-8 inline-flex items-center gap-3 px-7 py-4 bg-gold text-ink text-xs font-medium tracking-[0.25em] uppercase hover:bg-gold-soft transition-colors"
-            >
-              {t("faq.ctaButton")} <ArrowRight className="w-4 h-4" />
-            </Link>
+            <CtaButton to="/contact" arrow className="mt-8">
+              {t("faq.ctaButton")}
+            </CtaButton>
           </Reveal>
         </div>
       </section>
