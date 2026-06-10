@@ -69,13 +69,20 @@ truth) and use the `npm run …` commands below.
 | Script | Command |
 |--------|---------|
 | `build` | `vite build` |
-| `deploy` | `vite build && wrangler deploy -c dist/server/wrangler.json` |
-| `upload` | `vite build && wrangler versions upload -c dist/server/wrangler.json` |
+| `deploy` | `npm ci && node scripts/verify-cf-plugin.mjs && vite build && wrangler deploy -c dist/server/wrangler.json` |
+| `upload` | `npm ci && node scripts/verify-cf-plugin.mjs && vite build && wrangler versions upload -c dist/server/wrangler.json` |
 | `cf-typegen` | `wrangler types` |
 
-`deploy` and `upload` are self-contained (build + deploy) on purpose — see
-problem 2 above. They use the locally-pinned wrangler (in `node_modules`),
-avoiding `npx` pulling a newer/untested wrangler on each run.
+`deploy` and `upload` are fully self-contained — they run their own clean **npm**
+install, verify the Cloudflare plugin actually loaded, build, then deploy:
+
+- **`npm ci`** — guarantees a clean **npm** install (correct platform binaries +
+  install scripts) regardless of what Cloudflare's install step did. This is the
+  fix for problem 3 — bun does not reliably install the workerd/esbuild binaries
+  the Cloudflare plugin needs.
+- **`scripts/verify-cf-plugin.mjs`** — fails loudly if `@cloudflare/vite-plugin`
+  can't load, instead of letting `vite build` silently fall back to a Node SSR
+  build with no worker (see problem 3).
 
 ## Cloudflare Workers Builds configuration
 
