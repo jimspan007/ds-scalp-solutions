@@ -4,7 +4,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { useI18n } from "@/i18n/I18nProvider";
-import specialist from "@/assets/specialist-new-v2.png";
+import specialist from "@/assets/specialist-v4.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -41,8 +41,8 @@ function About() {
                 src={specialist}
                 alt={t("about.imgAlt")}
                 loading="lazy"
-                width={1080}
-                height={1440}
+                width={2400}
+                height={2400}
                 className="w-full h-full object-cover object-top"
               />
             </div>
