@@ -50,13 +50,19 @@ block, so if those binaries are missing the plugin is **silently skipped** and
 `vite build` produces a build with **no worker and no
 `dist/server/wrangler.json`** — no error, just a broken artifact.
 
-`bun.lockb` is platform-specific: a lockfile generated on Windows does not carry
-the Linux binaries, so a Linux CI `bun install` from it omits them and the plugin
-silently fails. `package-lock.json` (lockfileVersion 3) records every platform's
-optional deps, so **npm installs the correct Linux binaries**.
+Two lockfile problems compounded this:
 
-`bun.lockb` has been removed from the repo for this reason. Install with npm in
-CI (and prefer the `npm run …` commands below).
+1. **`bun.lockb` was Windows-specific** — a bun lockfile generated on Windows does
+   not carry the Linux binaries, so a Linux CI `bun install` from it omits them.
+2. **`package-lock.json` was stale** — it pinned an *older*
+   `@lovable.dev/vite-tanstack-config` (1.4.0) and was missing `nitro`, so the npm
+   install path produced a different/broken build.
+
+Fix: `bun.lockb` is removed, and `package-lock.json` is regenerated in sync with
+`package.json`. npm's lockfile (lockfileVersion 3) records every platform's
+optional deps, so a lockfile generated on any OS still installs the correct Linux
+binaries in CI. **Install with npm** (the `package-lock.json` is the source of
+truth) and use the `npm run …` commands below.
 
 ## npm/bun scripts
 
