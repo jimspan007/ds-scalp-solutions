@@ -191,7 +191,7 @@ function Contact() {
           <Reveal delay={120} className="lg:col-span-4 lg:col-start-9">
             <div className="space-y-10">
               <a
-                href="https://wa.me/302100000000"
+                href="https://wa.me/306943264883"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block border border-border hover:border-gold p-6 transition-colors group"
