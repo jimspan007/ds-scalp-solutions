@@ -40,6 +40,24 @@ The fix: the deploy/version commands **build and deploy in a single invocation**
 (`vite build && wrangler ...`), so the artifact is guaranteed to exist when
 wrangler reads it.
 
+### 3. Use npm, not bun, to install in CI
+
+`@cloudflare/vite-plugin` pulls in `workerd` and `esbuild`, whose binaries are
+installed as **platform-specific optional dependencies** (e.g.
+`@cloudflare/workerd-linux-64`, `@esbuild/linux-x64`). The `@lovable.dev` Vite
+config adds the Cloudflare plugin inside a `try { await import(...) } catch {}`
+block, so if those binaries are missing the plugin is **silently skipped** and
+`vite build` produces a build with **no worker and no
+`dist/server/wrangler.json`** — no error, just a broken artifact.
+
+`bun.lockb` is platform-specific: a lockfile generated on Windows does not carry
+the Linux binaries, so a Linux CI `bun install` from it omits them and the plugin
+silently fails. `package-lock.json` (lockfileVersion 3) records every platform's
+optional deps, so **npm installs the correct Linux binaries**.
+
+`bun.lockb` has been removed from the repo for this reason. Install with npm in
+CI (and prefer the `npm run …` commands below).
+
 ## npm/bun scripts
 
 | Script | Command |
@@ -60,18 +78,19 @@ configuration**:
 
 | Field | Value |
 |-------|-------|
-| Build command | `bun install` *(deps only — the deploy command builds)* |
-| Deploy command | `bun run deploy` |
-| Version command | `bun run upload` |
+| Build command | `npm ci` *(installs Linux binaries; the deploy command builds)* |
+| Deploy command | `npm run deploy` |
+| Version command | `npm run upload` |
 | Root directory | `/` |
 
-> You can also leave the Build command as `bun run build`; it just means the app
-> is built twice (once in the build step, once inside the deploy command). Both
-> work — the self-contained deploy command is what guarantees correctness.
+> Use **npm**, not bun, for install — see problem 3 above. The deploy/version
+> commands build the app themselves, so the Build command only needs to install
+> dependencies. You can also set the Build command to `npm run build`; it just
+> means the app is built twice (harmless).
 
 ## Local deploy
 
 ```sh
-bun run deploy   # build + deploy to production
-bun run upload   # build + upload a new version (gradual/preview)
+npm run deploy   # build + deploy to production
+npm run upload   # build + upload a new version (gradual/preview)
 ```
