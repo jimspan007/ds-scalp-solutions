@@ -208,7 +208,7 @@ function FinalCTA() {
               <ArrowRight className="w-4 h-4" />
             </Link>
             <a
-              href="https://wa.me/302100000000"
+              href="https://wa.me/306943264883"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-border text-foreground text-xs font-medium tracking-[0.25em] uppercase hover:border-gold hover:text-gold transition-colors"
