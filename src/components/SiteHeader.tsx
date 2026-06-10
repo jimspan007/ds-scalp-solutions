@@ -34,6 +34,7 @@ export function SiteHeader() {
   }, [open]);
 
   return (
+    <>
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
@@ -89,8 +90,11 @@ export function SiteHeader() {
           </div>
         </div>
       </div>
+      </header>
 
-      {/* Mobile drawer */}
+      {/* Mobile drawer — kept outside <header> so the header's backdrop-filter
+          (applied when scrolled) doesn't become this fixed element's containing
+          block and collapse it. */}
       <div
         className={`lg:hidden fixed inset-x-0 top-24 bottom-0 z-40 bg-background backdrop-blur-xl transition-all duration-300 ${
           open ? "opacity-100 visible" : "opacity-0 invisible"
@@ -123,6 +127,6 @@ export function SiteHeader() {
           </Link>
         </nav>
       </div>
-    </header>
+    </>
   );
 }
