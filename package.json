@@ -8,8 +8,8 @@
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
-    "deploy": "npm ci && node scripts/verify-cf-plugin.mjs && vite build && wrangler deploy -c dist/server/wrangler.json",
-    "upload": "npm ci && node scripts/verify-cf-plugin.mjs && vite build && wrangler versions upload -c dist/server/wrangler.json",
+    "deploy": "npm install --no-audit --no-fund && node scripts/verify-cf-plugin.mjs && vite build && wrangler deploy -c dist/server/wrangler.json",
+    "upload": "npm install --no-audit --no-fund && node scripts/verify-cf-plugin.mjs && vite build && wrangler versions upload -c dist/server/wrangler.json",
     "cf-typegen": "wrangler types",
     "lint": "eslint .",
     "format": "prettier --write ."

@@ -69,14 +69,14 @@ truth) and use the `npm run …` commands below.
 | Script | Command |
 |--------|---------|
 | `build` | `vite build` |
-| `deploy` | `npm ci && node scripts/verify-cf-plugin.mjs && vite build && wrangler deploy -c dist/server/wrangler.json` |
-| `upload` | `npm ci && node scripts/verify-cf-plugin.mjs && vite build && wrangler versions upload -c dist/server/wrangler.json` |
+| `deploy` | `npm install && node scripts/verify-cf-plugin.mjs && vite build && wrangler deploy -c dist/server/wrangler.json` |
+| `upload` | `npm install && node scripts/verify-cf-plugin.mjs && vite build && wrangler versions upload -c dist/server/wrangler.json` |
 | `cf-typegen` | `wrangler types` |
 
 `deploy` and `upload` are fully self-contained — they run their own clean **npm**
 install, verify the Cloudflare plugin actually loaded, build, then deploy:
 
-- **`npm ci`** — guarantees a clean **npm** install (correct platform binaries +
+- **`npm install`** — guarantees a clean **npm** install (correct platform binaries +
   install scripts) regardless of what Cloudflare's install step did. This is the
   fix for problem 3 — bun does not reliably install the workerd/esbuild binaries
   the Cloudflare plugin needs.
@@ -91,7 +91,7 @@ configuration**:
 
 | Field | Value |
 |-------|-------|
-| Build command | `npm ci` *(installs Linux binaries; the deploy command builds)* |
+| Build command | `npm install` *(installs Linux binaries; the deploy command builds)* |
 | Deploy command | `npm run deploy` |
 | Version command | `npm run upload` |
 | Root directory | `/` |
