@@ -3,7 +3,9 @@
 This app is a TanStack Start project built with the `@cloudflare/vite-plugin`
 and deployed to Cloudflare Workers via **Workers Builds**.
 
-## Why deploys need an explicit config
+## Two problems this setup solves
+
+### 1. The virtual entry point
 
 The root [`wrangler.jsonc`](./wrangler.jsonc) sets:
 
@@ -21,26 +23,35 @@ wrangler command run against the root config fails with:
 
 The build emits the real, deployable worker and a generated config at
 **`dist/server/wrangler.json`** (`main: index.js`, assets → `../client`). Every
-wrangler command that touches config must therefore point at that built file
-with `-c dist/server/wrangler.json`.
+wrangler command must point at that built file with `-c dist/server/wrangler.json`.
 
-> The plugin also writes `.wrangler/deploy/config.json` (a "redirected config"
-> meant to make a bare `wrangler deploy` follow the built output), but that file
-> is gitignored and machine-specific, and is not honored reliably in CI. The
-> explicit `-c` flag is the deterministic fix.
+### 2. Build output is not shared between CI steps
+
+Cloudflare Workers Builds runs the **Build command** and the **Deploy/Version
+command** as separate steps and does **not** carry the gitignored build output
+(`dist/`) between them. A deploy command that only runs
+`wrangler deploy -c dist/server/wrangler.json` therefore fails with:
+
+```
+✘ ENOENT: no such file or directory, open '/opt/buildhome/repo/dist/server/wrangler.json'
+```
+
+The fix: the deploy/version commands **build and deploy in a single invocation**
+(`vite build && wrangler ...`), so the artifact is guaranteed to exist when
+wrangler reads it.
 
 ## npm/bun scripts
 
 | Script | Command |
 |--------|---------|
 | `build` | `vite build` |
-| `deploy` | `wrangler deploy -c dist/server/wrangler.json` |
-| `upload` | `wrangler versions upload -c dist/server/wrangler.json` |
-| `deploy:build` | `vite build && wrangler deploy -c dist/server/wrangler.json` (local one-shot) |
+| `deploy` | `vite build && wrangler deploy -c dist/server/wrangler.json` |
+| `upload` | `vite build && wrangler versions upload -c dist/server/wrangler.json` |
 | `cf-typegen` | `wrangler types` |
 
-The scripts use the locally-pinned wrangler (in `node_modules`), avoiding `npx`
-pulling a newer/untested wrangler on each run.
+`deploy` and `upload` are self-contained (build + deploy) on purpose — see
+problem 2 above. They use the locally-pinned wrangler (in `node_modules`),
+avoiding `npx` pulling a newer/untested wrangler on each run.
 
 ## Cloudflare Workers Builds configuration
 
@@ -49,17 +60,18 @@ configuration**:
 
 | Field | Value |
 |-------|-------|
-| Build command | `bun run build` |
+| Build command | `bun install` *(deps only — the deploy command builds)* |
 | Deploy command | `bun run deploy` |
 | Version command | `bun run upload` |
 | Root directory | `/` |
 
-> If you prefer not to use the scripts, the equivalent direct commands are:
-> - Deploy: `npx wrangler deploy -c dist/server/wrangler.json`
-> - Version: `npx wrangler versions upload -c dist/server/wrangler.json`
+> You can also leave the Build command as `bun run build`; it just means the app
+> is built twice (once in the build step, once inside the deploy command). Both
+> work — the self-contained deploy command is what guarantees correctness.
 
 ## Local deploy
 
 ```sh
-bun run deploy:build   # build, then deploy
+bun run deploy   # build + deploy to production
+bun run upload   # build + upload a new version (gradual/preview)
 ```
