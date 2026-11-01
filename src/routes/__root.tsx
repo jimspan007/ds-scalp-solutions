@@ -2,6 +2,7 @@ import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/r
 
 import appCss from "../styles.css?url";
 import { I18nProvider } from "@/i18n/I18nProvider";
+import { getAnalyticsConfig } from "@/lib/analytics.functions";
 
 function NotFoundComponent() {
   return (
@@ -25,30 +26,51 @@ function NotFoundComponent() {
   );
 }
 
+const GTM_ID = "GTM-5VT2S74H";
+
 export const Route = createRootRoute({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "DS Scalp Micropigmentation - Premium SMP για άνδρες" },
-      {
-        name: "description",
-        content:
-          "Ρεαλιστικό, μη ανιχνεύσιμο scalp micropigmentation από πιστοποιημένο ειδικό. Επανάφερε τη γραμμή των μαλλιών σου. Κλείσε ιδιωτική συνεδρία γνωριμίας σήμερα.",
-      },
-      { name: "author", content: "DS Scalp Micropigmentation" },
-      { property: "og:title", content: "DS Scalp Micropigmentation" },
-      { property: "og:description", content: "Premium SMP για άνδρες. Ρεαλιστικά, μόνιμα αποτελέσματα." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-    ],
-    links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
-    ],
-  }),
+  loader: () => getAnalyticsConfig(),
+  staleTime: Infinity,
+  head: ({ loaderData }) => {
+    const gaId = loaderData?.gaId ?? null;
+    return {
+      meta: [
+        { charSet: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        { title: "DS Scalp Micropigmentation - Premium SMP για άνδρες" },
+        {
+          name: "description",
+          content:
+            "Ρεαλιστικό, μη ανιχνεύσιμο scalp micropigmentation από πιστοποιημένο ειδικό. Επανάφερε τη γραμμή των μαλλιών σου. Κλείσε ιδιωτική συνεδρία γνωριμίας σήμερα.",
+        },
+        { name: "author", content: "DS Scalp Micropigmentation" },
+        { property: "og:title", content: "DS Scalp Micropigmentation" },
+        { property: "og:description", content: "Premium SMP για άνδρες. Ρεαλιστικά, μόνιμα αποτελέσματα." },
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary" },
+      ],
+      links: [
+        { rel: "preconnect", href: "https://www.googletagmanager.com" },
+        {
+          rel: "stylesheet",
+          href: appCss,
+        },
+      ],
+      scripts: [
+        {
+          children: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');`,
+        },
+        ...(gaId
+          ? [
+              { src: `https://www.googletagmanager.com/gtag/js?id=${gaId}`, async: true },
+              {
+                children: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${gaId}');`,
+              },
+            ]
+          : []),
+      ],
+    };
+  },
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
@@ -61,6 +83,14 @@ function RootShell({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-5VT2S74H"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         {children}
         <Scripts />
       </body>
