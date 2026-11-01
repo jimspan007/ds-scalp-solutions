@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-20T00:00:00.000Z",
+  "title": "Design System: DS Scalp Micropigmentation",
+  "extensions": {
+    "colorMeta": {
+      "logo-blue": { "role": "primary", "displayName": "Logo Blue", "canonical": "oklch(0.55 0.09 245)", "tonalRamp": ["oklch(0.22 0.06 245)", "oklch(0.31 0.08 245)", "oklch(0.40 0.09 245)", "oklch(0.49 0.09 245)", "oklch(0.58 0.09 245)", "oklch(0.68 0.08 240)", "oklch(0.80 0.06 238)", "oklch(0.93 0.03 236)"] },
+      "logo-blue-soft": { "role": "primary", "displayName": "Logo Blue Soft", "canonical": "oklch(0.78 0.08 235)", "tonalRamp": ["oklch(0.30 0.06 235)", "oklch(0.40 0.07 235)", "oklch(0.50 0.08 235)", "oklch(0.60 0.08 235)", "oklch(0.70 0.08 235)", "oklch(0.78 0.08 235)", "oklch(0.87 0.05 235)", "oklch(0.95 0.02 235)"] },
+      "ink": { "role": "neutral", "displayName": "Ink (Deep Slate-Blue)", "canonical": "oklch(0.34 0.05 260)", "tonalRamp": ["oklch(0.20 0.04 260)", "oklch(0.27 0.05 260)", "oklch(0.34 0.05 260)", "oklch(0.46 0.03 250)", "oklch(0.60 0.03 248)", "oklch(0.74 0.02 244)", "oklch(0.86 0.02 240)", "oklch(0.97 0.012 240)"] },
+      "bone": { "role": "neutral", "displayName": "Bone (Cool Light)", "canonical": "oklch(0.97 0.012 240)", "tonalRamp": ["oklch(0.34 0.05 260)", "oklch(0.46 0.03 250)", "oklch(0.60 0.025 245)", "oklch(0.74 0.02 240)", "oklch(0.84 0.025 235)", "oklch(0.90 0.020 235)", "oklch(0.94 0.015 235)", "oklch(0.97 0.012 240)"] },
+      "border": { "role": "neutral", "displayName": "Hairline Border", "canonical": "oklch(0.84 0.025 235)" },
+      "destructive": { "role": "tertiary", "displayName": "Error Red", "canonical": "oklch(0.55 0.22 27)" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero and final-CTA headlines. Fraunces 400, set tight and large." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles, with an italic Logo Blue emphasis word." },
+      "title": { "displayName": "Title", "purpose": "Card and process-step headings." },
+      "body": { "displayName": "Body", "purpose": "Paragraph copy in muted-foreground, capped ~65ch." },
+      "label": { "displayName": "Label / Eyebrow", "purpose": "Uppercase, 0.28em-tracked Logo Blue kicker above headlines and on CTAs." }
+    },
+    "shadows": [
+      { "name": "ambient-low", "value": "0 8px 28px oklch(0.34 0.05 260 / 0.06)", "purpose": "Resting lift for cards and elevated surfaces. Barely there." },
+      { "name": "ambient-hover", "value": "0 16px 44px oklch(0.34 0.05 260 / 0.10)", "purpose": "Deeper diffuse shadow paired with translateY(-2px) on hover." }
+    ],
+    "motion": [
+      { "name": "ease-editorial", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Ease-out-expo for reveals, fade-ups, and state transitions." },
+      { "name": "reveal", "value": "opacity 1s, transform 1s; translateY(24px) -> 0", "purpose": "Scroll-triggered content reveal via IntersectionObserver, staggered ~100ms." },
+      { "name": "fade-up", "value": "0.8s cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Hero element entrance, with delay-100/200/300 stagger." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "container", "value": "1280px (max-w-7xl)" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The conversion CTA across the site. Logo Blue fill, ink text, uppercase wide-tracked label, sharp corners.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Book a consultation<svg class=\"ds-btn-arrow\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 16px 28px; background: oklch(0.55 0.09 245); color: oklch(0.34 0.05 260); font-family: Inter, system-ui, sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; text-decoration: none; border: none; border-radius: 0; transition: background 0.3s cubic-bezier(0.22,1,0.36,1); } .ds-btn-primary:hover { background: oklch(0.78 0.08 235); } .ds-btn-primary:focus-visible { outline: none; box-shadow: 0 0 0 1px oklch(0.55 0.09 245); } .ds-btn-arrow { width: 16px; height: 16px; transition: transform 0.3s cubic-bezier(0.22,1,0.36,1); } .ds-btn-primary:hover .ds-btn-arrow { transform: translateX(4px); }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary CTA. Hairline border, ink text; border and text shift to Logo Blue on hover.",
+      "html": "<a class=\"ds-btn-outline\" href=\"#\">View the gallery</a>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 16px 28px; background: oklch(0.97 0.012 240); color: oklch(0.34 0.05 260); font-family: Inter, system-ui, sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; text-decoration: none; border: 1px solid oklch(0.84 0.025 235); border-radius: 0; transition: border-color 0.3s, color 0.3s; } .ds-btn-outline:hover { border-color: oklch(0.55 0.09 245); color: oklch(0.55 0.09 245); }"
+    },
+    {
+      "name": "Eyebrow",
+      "kind": "custom",
+      "refersTo": "label",
+      "description": "The signature uppercase Logo Blue kicker that leads sections.",
+      "html": "<p class=\"ds-eyebrow\">The Process</p>",
+      "css": ".ds-eyebrow { font-family: Inter, system-ui, sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: oklch(0.55 0.09 245); margin: 0; }"
+    },
+    {
+      "name": "Testimonial Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Bordered, sharp-cornered figure with star row, serif quote, and hairline-divided attribution.",
+      "html": "<figure class=\"ds-card\"><div class=\"ds-card-stars\"><svg viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"m12 2 3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6Z\"/></svg><svg viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"m12 2 3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6Z\"/></svg><svg viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"m12 2 3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6Z\"/></svg><svg viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"m12 2 3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6Z\"/></svg><svg viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"m12 2 3 6.5 7 .6-5.3 4.6 1.6 6.9L12 17l-6.9 3.6 1.6-6.9L1.4 9.1l7-.6Z\"/></svg></div><blockquote class=\"ds-card-quote\">It looks completely natural. No one knows it isn't real hair.</blockquote><figcaption class=\"ds-card-cite\"><span class=\"ds-card-name\">Nikos P.</span><span class=\"ds-card-detail\">Hairline restoration</span></figcaption></figure>",
+      "css": ".ds-card { display: flex; flex-direction: column; height: 100%; padding: 32px; background: oklch(0.97 0.012 240); border: 1px solid oklch(0.84 0.025 235); border-radius: 0; box-shadow: 0 8px 28px oklch(0.34 0.05 260 / 0.06); transition: box-shadow 0.3s, transform 0.3s cubic-bezier(0.22,1,0.36,1); } .ds-card:hover { box-shadow: 0 16px 44px oklch(0.34 0.05 260 / 0.10); transform: translateY(-2px); } .ds-card-stars { display: flex; gap: 2px; margin-bottom: 24px; } .ds-card-stars svg { width: 14px; height: 14px; color: oklch(0.55 0.09 245); } .ds-card-quote { flex: 1; margin: 0; font-family: Fraunces, Georgia, serif; font-size: 1.25rem; font-weight: 400; line-height: 1.3; letter-spacing: -0.02em; color: oklch(0.34 0.05 260); } .ds-card-cite { margin-top: 32px; padding-top: 24px; border-top: 1px solid oklch(0.84 0.025 235 / 0.6); display: flex; flex-direction: column; gap: 4px; } .ds-card-name { font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; color: oklch(0.34 0.05 260); } .ds-card-detail { font-family: Inter, system-ui, sans-serif; font-size: 0.75rem; color: oklch(0.46 0.03 250); }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Muted-fill field with a subtle border and a Logo Blue focus ring.",
+      "html": "<input class=\"ds-input\" type=\"text\" placeholder=\"Your name\" />",
+      "css": ".ds-input { width: 100%; padding: 8px 12px; background: oklch(0.93 0.015 235); color: oklch(0.34 0.05 260); font-family: Inter, system-ui, sans-serif; font-size: 0.95rem; border: 1px solid oklch(0.84 0.025 235); border-radius: 4px; transition: box-shadow 0.2s, border-color 0.2s; } .ds-input::placeholder { color: oklch(0.46 0.03 250); } .ds-input:focus-visible { outline: none; border-color: oklch(0.55 0.09 245); box-shadow: 0 0 0 1px oklch(0.55 0.09 245); }"
+    },
+    {
+      "name": "Process Step",
+      "kind": "custom",
+      "refersTo": "title",
+      "description": "Numbered step with a Logo Blue top rule and serif heading. The signature editorial list unit.",
+      "html": "<div class=\"ds-step\"><p class=\"ds-step-num\">01</p><h3 class=\"ds-step-title\">Consultation</h3><p class=\"ds-step-body\">We map your hairline and discuss the look you want, with no pressure.</p></div>",
+      "css": ".ds-step { border-top: 1px solid oklch(0.55 0.09 245); padding-top: 24px; } .ds-step-num { margin: 0; font-family: Fraunces, Georgia, serif; font-size: 1.125rem; color: oklch(0.55 0.09 245); } .ds-step-title { margin: 12px 0 0; font-family: Fraunces, Georgia, serif; font-size: 1.25rem; font-weight: 400; letter-spacing: -0.02em; color: oklch(0.34 0.05 260); } .ds-step-body { margin: 12px 0 0; font-family: Inter, system-ui, sans-serif; font-size: 0.875rem; line-height: 1.65; color: oklch(0.46 0.03 250); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Quiet Atelier",
+    "overview": "This is the private studio of a master craftsman, not a clinic foyer and never a sales floor. Everything reads as deliberate: serif headlines set tight and large, cool slate neutrals, hairline rules, a film-grain hush over the surfaces, and a single restrained blue that marks the path forward. The work speaks; the interface gets out of its way. Confidence here is communicated through restraint, the way an expensive object earns trust by what it refuses to do. The system rejects the cheap-clinic playbook, the generic SaaS / AI-template look, the trendy and loud, and the cold sterile hospital. Density is generous: large type against wide whitespace, deliberate vertical rhythm, calm and discreet because the visitor is private and a little vulnerable.",
+    "keyCharacteristics": [
+      "Editorial serif display (Fraunces) over a quiet humanist sans (Inter)",
+      "Cool slate-blue neutral foundation, never pure black or white",
+      "One accent, Logo Blue, used sparingly as wayfinding",
+      "Sharp corners, hairline borders, film grain instead of decoration",
+      "Soft ambient shadows for subtle dimensionality, never heavy or hard",
+      "Calm, scroll-revealed motion that honors prefers-reduced-motion"
+    ],
+    "rules": [
+      { "name": "The One Voice Rule", "body": "Logo Blue appears on no more than ~10% of any screen. It is wayfinding, not decoration. If two elements both want the accent, one of them is wrong.", "section": "colors" },
+      { "name": "The Tinted Neutral Rule", "body": "Pure #000 and #fff are forbidden. Every neutral carries a trace of the brand hue (chroma ~0.01-0.05 toward 240-260). The cool tint is what makes the slate read as intentional rather than default.", "section": "colors" },
+      { "name": "The Serif-Headline Rule", "body": "Every h1-h4 is Fraunces at weight 400. Headings are never bold sans; weight contrast comes from the serif/sans split, not from heavy weights.", "section": "typography" },
+      { "name": "The Eyebrow Rule", "body": "Section intros lead with an uppercase, wide-tracked Logo Blue eyebrow at 0.28em tracking. It is the system's connective tissue.", "section": "typography" },
+      { "name": "The Diffuse-Only Rule", "body": "Shadows are always soft, wide, and tinted with ink (never neutral gray, never black). A small blur radius or alpha above ~0.12 is forbidden. Depth whispers; it does not announce.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep Logo Blue under ~10% of any screen, as wayfinding only (eyebrows, the one CTA, active nav, step numbers).",
+      "Do set every headline in Fraunces at weight 400; let the serif/sans split carry hierarchy, not bold weights.",
+      "Do lead sections with the uppercase, 0.28em-tracked Logo Blue eyebrow.",
+      "Do tint every neutral toward the brand hue; use Ink for black and Bone for white.",
+      "Do keep CTAs and cards sharp-cornered (0 radius); reserve the 4px softening for inputs only.",
+      "Do use soft, wide, ink-tinted ambient shadows when you want lift, paired with a small translateY on hover.",
+      "Do honor prefers-reduced-motion: reveals and fades collapse to instant, content-complete rendering.",
+      "Do let real results (the gallery) carry the argument: show, don't tell."
+    ],
+    "donts": [
+      "Don't build the cheap-clinic look: no neon BOOK NOW, no stock smiling models, no before/after spam wall, no discount-banner urgency.",
+      "Don't ship the generic SaaS / AI-template look: no uniform shadcn card grids, no gradient hero blobs, no hero-metric counters.",
+      "Don't go trendy, loud, or gimmicky: no brutalism, no neon, no heavy showy animation.",
+      "Don't drift into the cold, sterile hospital extreme (pure white + clinical teal). Warmth and credibility coexist.",
+      "Don't use #000 or #fff anywhere.",
+      "Don't use gradient text (background-clip: text) or colored side-stripe borders (border-left greater than 1px as an accent).",
+      "Don't use hard, dark, tight-blur drop shadows. If it looks like a 2014 app shadow, the blur is too small and the alpha too high.",
+      "Don't apply grain or heavy motion to small components; grain belongs on full-bleed sections.",
+      "Don't treat one language as primary: Greek and English layouts and tone must both feel native."
+    ]
+  }
+}

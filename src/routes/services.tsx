@@ -1,8 +1,9 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
+import { CtaButton } from "@/components/CtaButton";
 import { useI18n } from "@/i18n/I18nProvider";
 import processImg from "@/assets/process-detail.jpg";
 
@@ -73,10 +74,10 @@ function Services() {
                 {t("services.faqSection.title")}
               </h2>
             </Reveal>
-            <div className="mt-10 space-y-8">
+            <div className="mt-10 border-t border-border/60">
               {faq.map((item, i) => (
-                <Reveal key={item.q} delay={i * 100}>
-                  <div className="border-l-2 border-gold pl-6">
+                <Reveal key={item.q} delay={i * 100} className="border-b border-border/60">
+                  <div className="py-6">
                     <h3 className="font-display text-xl">{item.q}</h3>
                     <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{item.a}</p>
                   </div>
@@ -84,12 +85,9 @@ function Services() {
               ))}
             </div>
             <Reveal delay={400}>
-              <Link
-                to="/contact"
-                className="mt-12 inline-flex items-center gap-3 px-7 py-4 bg-gold text-ink text-xs font-medium tracking-[0.25em] uppercase hover:bg-gold-soft transition-colors"
-              >
-                {t("services.faqSection.cta")} <ArrowRight className="w-4 h-4" />
-              </Link>
+              <CtaButton to="/contact" arrow className="mt-12">
+                {t("services.faqSection.cta")}
+              </CtaButton>
             </Reveal>
           </div>
         </div>
